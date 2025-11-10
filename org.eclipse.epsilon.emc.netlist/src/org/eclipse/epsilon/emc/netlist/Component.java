@@ -1,18 +1,18 @@
 package org.eclipse.epsilon.emc.netlist;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import java.util.TreeMap;
 
-import org.apache.commons.collections.map.UnmodifiableMap;
+import org.apache.commons.collections.collection.UnmodifiableCollection;
 
 public class Component extends ModelElement implements Comparable<Component> {
 
 	private final String name;
-
-	private final Map<Integer, Net> pins = new TreeMap<>();
-	private Set<String> features = Set.of();
+	private final Map<Integer, Pin> pins = new TreeMap<>();
+	private List<String> features = List.of();
 
 	public Component(ConciseNetlistModel model, String name) {
 		super(model);
@@ -24,22 +24,21 @@ public class Component extends ModelElement implements Comparable<Component> {
 	}
 
 	@SuppressWarnings("unchecked")
-	public Map<Integer, Net> getPins() {
-		return UnmodifiableMap.decorate(pins);
+	public Collection<Pin> getPins() {
+		return UnmodifiableCollection.decorate(pins.values());
 	}
 
-	public Net getPin(int pinNumber) {
+	public Pin getPin(int pinNumber) {
 		return pins.get(pinNumber);
 	}
 
 	public void setPin(int pinNumber, Net net) {
-		Net oldNet = pins.remove(pinNumber);
-		if (oldNet != null) {
-			oldNet.removeComponent(this);
+		Pin pin = pins.get(pinNumber);
+		if (pin == null) {
+			pin = new Pin(getModel(), this, pinNumber);
+			pins.put(pinNumber, pin);
 		}
-
-		pins.put(pinNumber, net);
-		net.addComponent(this);
+		pin.setNet(net);
 	}
 
 	@Override
@@ -59,12 +58,12 @@ public class Component extends ModelElement implements Comparable<Component> {
 		return Objects.equals(name, other.name);
 	}
 
-	public Set<String> getFeatures() {
+	public List<String> getFeatures() {
 		// Note: set is already unmodifiable from creation
 		return features;
 	}
 
-	public void setFeatures(Set<String> features) {
+	public void setFeatures(List<String> features) {
 		this.features = features;
 	}
 
@@ -75,7 +74,7 @@ public class Component extends ModelElement implements Comparable<Component> {
 
 	@Override
 	public String toString() {
-		return "Component [name=" + name + ", pins=" + pins + ", features=" + features + "]";
+		return "Component [name=" + name + ", pins=" + getPins() + ", features=" + features + "]";
 	}
 
 }

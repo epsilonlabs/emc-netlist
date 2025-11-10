@@ -9,7 +9,7 @@ import org.apache.commons.collections.set.UnmodifiableSet;
 public class Net extends ModelElement {
 
 	private final String name;
-	private final Set<Component> components = new TreeSet<>();
+	private final Set<Pin> pins = new TreeSet<>();
 
 	public Net(ConciseNetlistModel model, String name) {
 		super(model);
@@ -38,16 +38,16 @@ public class Net extends ModelElement {
 	}
 
 	@SuppressWarnings("unchecked")
-	public Set<Component> getComponents() {
-		return UnmodifiableSet.decorate(components);
+	public Set<Pin> getPins() {
+		return UnmodifiableSet.decorate(pins);
 	}
 
-	public void addComponent(Component component) {
-		components.add(component);
+	public void addPin(Pin pin) {
+		pins.add(pin);
 	}
 
-	public void removeComponent(Component component) {
-		components.remove(component);
+	public void removePin(Pin pin) {
+		pins.remove(pin);
 	}
 
 	@Override

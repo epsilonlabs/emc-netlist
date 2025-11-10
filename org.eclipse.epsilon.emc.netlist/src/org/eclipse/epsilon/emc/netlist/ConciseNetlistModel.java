@@ -26,10 +26,12 @@ public class ConciseNetlistModel extends CachedModel<ModelElement> {
 
 	private static final String ID_PREFIX_NET = "n-";
 	private static final String ID_PREFIX_COMPONENT = "c-";
+	private static final String ID_PREFIX_PIN = "p-";
 
 	private static final String TYPE_NET = "Net";
 	private static final String TYPE_COMPONENT = "Component";
-	private static final Set<String> ALL_TYPES = Set.of(TYPE_NET, TYPE_COMPONENT);
+	private static final String TYPE_PIN = "Pin";
+	private static final Set<String> ALL_TYPES = Set.of(TYPE_NET, TYPE_COMPONENT, TYPE_PIN);
 
 	private File modelFile;
 	private Map<String, Net> nets;
@@ -51,9 +53,16 @@ public class ConciseNetlistModel extends CachedModel<ModelElement> {
 			return nets.get(id.substring(ID_PREFIX_NET.length()));
 		} else if (id.startsWith(ID_PREFIX_COMPONENT)) {
 			return components.get(id.substring(ID_PREFIX_COMPONENT.length()));
-		} else {
-			return null;
+		} else if (id.startsWith(ID_PREFIX_PIN)) {
+			String[] parts = id.substring(ID_PREFIX_PIN.length()).split("[-]");
+			if (parts.length == 2) {
+				Component cmp = components.get(parts[0]);
+				if (cmp != null) {
+					return cmp.getPin(Integer.parseInt(parts[1]));
+				}
+			}
 		}
+		return null;
 	}
 
 	@Override
@@ -62,9 +71,11 @@ public class ConciseNetlistModel extends CachedModel<ModelElement> {
 			return ID_PREFIX_NET + net.getName();
 		} else if (instance instanceof Component component) {
 			return ID_PREFIX_COMPONENT + component.getName();
-		} else {
-			return null;
+		} else if (instance instanceof Pin pin) {
+			return String.format("%s%s-%d", ID_PREFIX_PIN,
+				pin.getComponent().getName(), pin.getNumber());
 		}
+		return null;
 	}
 
 	@Override
@@ -105,7 +116,10 @@ public class ConciseNetlistModel extends CachedModel<ModelElement> {
 	protected Collection<ModelElement> allContentsFromModel() {
 		var allContents = new ArrayList<ModelElement>();
 		allContents.addAll(nets.values());
-		allContents.addAll(components.values());
+		for (Component cmp : components.values()) {
+			allContents.add(cmp);
+			allContents.addAll(cmp.getPins());
+		}
 		return allContents;
 	}
 
@@ -121,6 +135,12 @@ public class ConciseNetlistModel extends CachedModel<ModelElement> {
 			return UnmodifiableCollection.decorate(nets.values());
 		} else if (TYPE_COMPONENT.equals(kind)) {
 			return UnmodifiableCollection.decorate(components.values());
+		} else if (TYPE_PIN.equals(kind)) {
+			var allPins = new ArrayList<ModelElement>();
+			for (Component cmp : components.values()) {
+				allPins.addAll(cmp.getPins());
+			}
+			return allPins;
 		} else {
 			throw new EolModelElementTypeNotFoundException(this.getName(), kind);
 		}
@@ -160,7 +180,7 @@ public class ConciseNetlistModel extends CachedModel<ModelElement> {
 				Net net = nets.computeIfAbsent(netName, k -> new Net(this, k));
 				Component component = components.computeIfAbsent(componentName, k -> new Component(this, k));
 				component.setPin(pinNumber, net);
-				component.setFeatures(Set.of(componentFeatures));
+				component.setFeatures(List.of(componentFeatures));
 			}
 		} catch (Exception e) {
 			throw new EolModelLoadingException(e, this);

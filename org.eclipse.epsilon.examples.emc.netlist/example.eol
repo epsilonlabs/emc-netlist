@@ -1,8 +1,16 @@
+'--- components ---\n'.println();
+
 for (cmp in Component.all) {
   cmp.name.println('---\nComponent: ');
-
-  for (k in cmp.pins.keySet) {
-    cmp.pins.get(k).println('Connected on pin ' + k + ': ');
+  for (pin in cmp.pins) {
+    pin.net.println('Connected on pin ' + pin.number + ': ');
   }
   cmp.features.println('Features: ');
+}
+
+'\n--- nets ---\n'.println();
+
+for (net in Net.all) {
+  net.name.println('---\nNet: ');
+  net.pins.println('Connected pins: ');
 }

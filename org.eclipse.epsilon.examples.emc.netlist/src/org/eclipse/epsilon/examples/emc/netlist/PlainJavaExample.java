@@ -12,7 +12,8 @@ public class PlainJavaExample {
 			model.load();
 
 			System.out.println("Nets: " + model.getAllOfKind("Net"));
-			System.out.println("Component: " + model.getAllOfKind("Component"));
+			System.out.println("Components: " + model.getAllOfKind("Component"));
+			System.out.println("Pins:  " + model.getAllOfKind("Pin"));
 		}
 	}
 
