@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMC Driver for Concise Netlists
+Bundle-SymbolicName: org.eclipse.epsilon.emc.netlist
+Bundle-Version: 1.0.0.qualifier
+Export-Package: org.eclipse.epsilon.emc.netlist
+Require-Bundle: org.eclipse.epsilon.eol.engine;bundle-version="2.0.0",
+ org.apache.commons.collections;bundle-version="3.2.2"
+Bundle-Vendor: University of York
+Automatic-Module-Name: org.eclipse.epsilon.emc.netlist
+Bundle-RequiredExecutionEnvironment: JavaSE-17

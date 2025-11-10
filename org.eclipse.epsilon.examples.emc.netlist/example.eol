@@ -1,0 +1,8 @@
+for (cmp in Component.all) {
+  cmp.name.println('---\nComponent: ');
+
+  for (k in cmp.pins.keySet) {
+    cmp.pins.get(k).println('Connected on pin ' + k + ': ');
+  }
+  cmp.features.println('Features: ');
+}

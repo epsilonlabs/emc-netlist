@@ -1,0 +1,6 @@
+CONCISE NET LIST - 1  
+0V                       C1               2        0805_NPO-SC0266-221G,0805_NPO,A
+10V                      R1               1        RC02G-SR0075-101F,RC02G,100.0RA
+UNNAMED_1_0805NPO_I1_A   C1               1        0805_NPO-SC0266-221G,0805_NPO,A
+UNNAMED_1_0805NPO_I1_A   R1               2        RC02G-SR0075-101F,RC02G,100.0RA
+END CONCISE NET LIST
