@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.epsilon.netlist.model/src" modelPluginID="org.eclipse.epsilon.netlist.model"
+    modelName="Netlist" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>netlist.ecore</foreignModel>
+  <genPackages prefix="ConciseNetlist" basePackage="org.eclipse.epsilon.netlist.model"
+      disposableProviderFactory="true" ecorePackage="netlist.ecore#/">
+    <genClasses ecoreClass="netlist.ecore#//Netlist">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference netlist.ecore#//Netlist/nets"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference netlist.ecore#//Netlist/components"/>
+    </genClasses>
+    <genClasses ecoreClass="netlist.ecore#//Net">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute netlist.ecore#//Net/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference netlist.ecore#//Net/pins"/>
+    </genClasses>
+    <genClasses ecoreClass="netlist.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute netlist.ecore#//Component/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference netlist.ecore#//Component/pins"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute netlist.ecore#//Component/features"/>
+    </genClasses>
+    <genClasses ecoreClass="netlist.ecore#//Pin">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute netlist.ecore#//Pin/number"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference netlist.ecore#//Pin/component"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference netlist.ecore#//Pin/net"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

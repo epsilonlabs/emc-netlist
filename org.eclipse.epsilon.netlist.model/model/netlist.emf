@@ -1,0 +1,24 @@
+@namespace(uri="http://eclipse.org/epsilon/netlist/concise")
+package conciseNetlist;
+
+class Netlist {
+	val Net[*] nets;
+	val Component[*] components;
+}
+
+class Net {
+	attr String name;
+	ref Pin[*]#net pins;
+}
+
+class Component {
+	attr String name;
+	val Pin[*]#component pins;
+	attr String[*] features;
+}
+
+class Pin {
+	attr int number;
+	ref Component#pins component;
+	ref Net#pins net;
+}

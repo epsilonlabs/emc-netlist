@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated netlist -->
+      <package
+            uri="http://eclipse.org/epsilon/netlist/concise"
+            class="org.eclipse.epsilon.netlist.model.conciseNetlist.ConciseNetlistPackage"
+            genModel="model/netlist.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="org.eclipse.epsilon.netlist.model.conciseNetlist.resource.ConciseNetlistResourceFactory"
+            type="org.eclipse.epsilon.netlist.model.conciseNetlist.parser">
+      </parser>
+   </extension>
+
+</plugin>
