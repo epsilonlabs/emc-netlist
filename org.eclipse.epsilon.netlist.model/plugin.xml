@@ -17,7 +17,7 @@
          point="org.eclipse.emf.ecore.extension_parser">
       <parser
             class="org.eclipse.epsilon.netlist.model.conciseNetlist.resource.ConciseNetlistResourceFactory"
-            type="org.eclipse.epsilon.netlist.model.conciseNetlist.parser">
+            type="dat">
       </parser>
    </extension>
 
