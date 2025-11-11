@@ -9,7 +9,7 @@ import org.eclipse.epsilon.eol.EolModule;
 import org.eclipse.epsilon.netlist.model.conciseNetlist.ConciseNetlistPackage;
 import org.eclipse.epsilon.netlist.model.conciseNetlist.resource.ConciseNetlistResourceFactory;
 
-public class EOLExample {
+public class EolEmfModelExample {
 
 	public static void main(String[] args) throws Exception {
 		// Register EMF metamodel and resource factory
