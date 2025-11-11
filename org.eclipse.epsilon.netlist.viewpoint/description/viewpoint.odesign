@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="viewpoint" version="12.0.0.2017041100">
+  <ownedViewpoints name="org.eclipse.epsilon.netlist.viewpoint" label="Netlist Viewpoint" modelFileExtension="dat">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.eclipse.epsilon.netlist.viewpoint.diagram" label="Netlist Diagram" domainClass="conciseNetlist::Netlist" enablePopupBars="true">
+      <metamodel href="http://eclipse.org/epsilon/netlist/concise#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.net" label="Net Node" semanticCandidatesExpression="feature:nets" domainClass="conciseNetlist::Net">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="-1" height="-1">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.component" label="Component Node" semanticCandidatesExpression="feature:components" domainClass="conciseNetlist::Component">
+          <borderedNodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.pin" label="Pin Border Node" semanticCandidatesExpression="feature:pins" domainClass="conciseNetlist::Pin">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="feature:number" labelPosition="node" resizeKind="NSEW" width="2" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="10" height="4">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.pinToNet" label="Pin-Net Edge" sourceMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.pin']" targetMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.net']" targetFinderExpression="feature:net">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.eclipse.epsilon.netlist.viewpoint.Services"/>
+  </ownedViewpoints>
+</description:Group>

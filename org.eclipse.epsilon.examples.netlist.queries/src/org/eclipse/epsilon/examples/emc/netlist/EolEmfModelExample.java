@@ -19,7 +19,7 @@ public class EolEmfModelExample {
 			.put(ConciseNetlistPackage.eNS_URI, ConciseNetlistPackage.eINSTANCE);
 
 		try (var model = new EmfModel()) {
-			model.setModelFile("dialcnet.dat");
+			model.setModelFile("../org.eclipse.epsilon.examples.netlist.model/dialcnet.dat");
 			model.setName("Model");
 			model.setMetamodelUri(ConciseNetlistPackage.eNS_URI);
 			model.load();

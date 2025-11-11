@@ -41,7 +41,6 @@ public class ConciseNetlistModelConfigurationDialog extends AbstractModelConfigu
 	protected void createGroups(Composite control) {
 		createNameAliasGroup(control);
 		createFileGroup(control);
-		createLoadStoreOptionsGroup(control);
 	}
 
 	private void createFileGroup(Composite parent) {

@@ -17,7 +17,7 @@ public class PlainJavaExample {
 
 		// Load model and try it out
 		try (var model = new EmfModel()) {
-			model.setModelFile("dialcnet.dat");
+			model.setModelFile("../org.eclipse.epsilon.examples.netlist.model/dialcnet.dat");
 			model.setMetamodelUri(ConciseNetlistPackage.eNS_URI);
 			model.setName("Model");
 			model.load();

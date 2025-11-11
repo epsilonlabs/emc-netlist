@@ -9,7 +9,7 @@ public class EolDedicatedModelExample {
 
 	public static void main(String[] args) throws Exception {
 		try (var model = new ConciseNetlistModel()) {
-			model.setModelFile("dialcnet.dat");
+			model.setModelFile("../org.eclipse.epsilon.examples.netlist.model/dialcnet.dat");
 			model.setName("Model");
 			model.load();
 
