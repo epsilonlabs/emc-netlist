@@ -9,17 +9,22 @@ import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.epsilon.common.util.StringProperties;
 import org.eclipse.epsilon.emc.emf.InMemoryEmfModel;
 import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
 import org.eclipse.epsilon.eol.exceptions.models.EolEnumerationValueNotFoundException;
 import org.eclipse.epsilon.eol.exceptions.models.EolModelElementTypeNotFoundException;
 import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
 import org.eclipse.epsilon.eol.exceptions.models.EolNotInstantiableModelElementTypeException;
+import org.eclipse.epsilon.eol.models.IRelativePathResolver;
 import org.eclipse.epsilon.eol.models.Model;
 import org.eclipse.epsilon.netlist.model.conciseNetlist.ConciseNetlistPackage;
 import org.eclipse.epsilon.netlist.model.conciseNetlist.resource.ConciseNetlistResourceFactory;
 
 public class ConciseNetlistModel extends Model {
+
+	public static final String PROPERTY_MODEL_URI = "file.uri";
+	public static final String PROPERTY_MODEL_PATH = "file.path";
 
 	private InMemoryEmfModel model;
 	private URI modelFileUri;
@@ -40,6 +45,19 @@ public class ConciseNetlistModel extends Model {
 		
 		Resource r = rs.getResource(modelFileUri, true);
 		model = new InMemoryEmfModel(r);
+	}
+
+	@Override
+	public void load(StringProperties properties, IRelativePathResolver resolver) throws EolModelLoadingException {
+		super.load(properties, resolver);
+
+		if (properties.hasProperty(PROPERTY_MODEL_URI)) {
+			setModelFileUri(URI.createURI(properties.getProperty(PROPERTY_MODEL_URI)));
+		} else if (properties.hasProperty(PROPERTY_MODEL_PATH)) {
+			setModelFile(resolver.resolve(properties.getProperty(PROPERTY_MODEL_PATH)));
+		}
+
+		load();
 	}
 
 	public URI getModelFileUri() {
