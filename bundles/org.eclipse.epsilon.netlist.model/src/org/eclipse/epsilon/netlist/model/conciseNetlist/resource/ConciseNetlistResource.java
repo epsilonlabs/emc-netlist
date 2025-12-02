@@ -45,7 +45,7 @@ public class ConciseNetlistResource extends ResourceImpl {
 				// Split line into parts
 				String netName = st.nextToken();
 				String componentName = st.nextToken();
-				int pinNumber = Integer.parseInt(st.nextToken());
+				String pinName = st.nextToken();
 				String[] componentFeatures = st.nextToken().split(",");
 
 				Net net = nets.computeIfAbsent(netName, k -> {
@@ -62,7 +62,7 @@ public class ConciseNetlistResource extends ResourceImpl {
 				});
 
 				Pin pin = ConciseNetlistFactory.eINSTANCE.createPin();
-				pin.setNumber(pinNumber);
+				pin.setName(pinName);
 				pin.setNet(net);
 				component.getPins().add(pin);
 

@@ -4,6 +4,7 @@ package org.eclipse.epsilon.netlist.model.conciseNetlist;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -103,14 +104,14 @@ public interface ConciseNetlistPackage extends EPackage {
 	int NETLIST_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.impl.NetImpl <em>Net</em>}' class.
+	 * The meta object id for the '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.impl.NamedElementImpl <em>Named Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.impl.NetImpl
-	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.impl.ConciseNetlistPackageImpl#getNet()
+	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.impl.NamedElementImpl
+	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.impl.ConciseNetlistPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NET = 1;
+	int NAMED_ELEMENT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -119,7 +120,44 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NET__NAME = 0;
+	int NAMED_ELEMENT__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.impl.NetImpl <em>Net</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.impl.NetImpl
+	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.impl.ConciseNetlistPackageImpl#getNet()
+	 * @generated
+	 */
+	int NET = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NET__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pins</b></em>' reference list.
@@ -128,7 +166,7 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NET__PINS = 1;
+	int NET__PINS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Net</em>' class.
@@ -137,7 +175,7 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NET_FEATURE_COUNT = 2;
+	int NET_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Net</em>' class.
@@ -146,7 +184,7 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NET_OPERATION_COUNT = 0;
+	int NET_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.impl.ComponentImpl <em>Component</em>}' class.
@@ -156,7 +194,7 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.impl.ConciseNetlistPackageImpl#getComponent()
 	 * @generated
 	 */
-	int COMPONENT = 2;
+	int COMPONENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -165,7 +203,7 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__NAME = 0;
+	int COMPONENT__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Pins</b></em>' containment reference list.
@@ -174,7 +212,7 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__PINS = 1;
+	int COMPONENT__PINS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' attribute list.
@@ -183,7 +221,7 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__FEATURES = 2;
+	int COMPONENT__FEATURES = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -192,7 +230,16 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = 3;
+	int COMPONENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Is Connected To</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT___IS_CONNECTED_TO__NET = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -201,7 +248,7 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_OPERATION_COUNT = 0;
+	int COMPONENT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.impl.PinImpl <em>Pin</em>}' class.
@@ -211,16 +258,16 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.impl.ConciseNetlistPackageImpl#getPin()
 	 * @generated
 	 */
-	int PIN = 3;
+	int PIN = 4;
 
 	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIN__NUMBER = 0;
+	int PIN__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -229,7 +276,7 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PIN__COMPONENT = 1;
+	int PIN__COMPONENT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Net</b></em>' reference.
@@ -238,7 +285,7 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PIN__NET = 2;
+	int PIN__NET = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Pin</em>' class.
@@ -247,7 +294,7 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PIN_FEATURE_COUNT = 3;
+	int PIN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Pin</em>' class.
@@ -256,7 +303,7 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PIN_OPERATION_COUNT = 0;
+	int PIN_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 
 	/**
@@ -292,6 +339,27 @@ public interface ConciseNetlistPackage extends EPackage {
 	EReference getNetlist_Components();
 
 	/**
+	 * Returns the meta object for class '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Named Element</em>'.
+	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.NamedElement
+	 * @generated
+	 */
+	EClass getNamedElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.NamedElement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.NamedElement#getName()
+	 * @see #getNamedElement()
+	 * @generated
+	 */
+	EAttribute getNamedElement_Name();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Net <em>Net</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -300,17 +368,6 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getNet();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Net#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.Net#getName()
-	 * @see #getNet()
-	 * @generated
-	 */
-	EAttribute getNet_Name();
 
 	/**
 	 * Returns the meta object for the reference list '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Net#getPins <em>Pins</em>}'.
@@ -332,17 +389,6 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComponent();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Component#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.Component#getName()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EAttribute getComponent_Name();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Component#getPins <em>Pins</em>}'.
@@ -367,6 +413,16 @@ public interface ConciseNetlistPackage extends EPackage {
 	EAttribute getComponent_Features();
 
 	/**
+	 * Returns the meta object for the '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Component#isConnectedTo(org.eclipse.epsilon.netlist.model.conciseNetlist.Net) <em>Is Connected To</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Connected To</em>' operation.
+	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.Component#isConnectedTo(org.eclipse.epsilon.netlist.model.conciseNetlist.Net)
+	 * @generated
+	 */
+	EOperation getComponent__IsConnectedTo__Net();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Pin <em>Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -375,17 +431,6 @@ public interface ConciseNetlistPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPin();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Pin#getNumber <em>Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Number</em>'.
-	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.Pin#getNumber()
-	 * @see #getPin()
-	 * @generated
-	 */
-	EAttribute getPin_Number();
 
 	/**
 	 * Returns the meta object for the container reference '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Pin#getComponent <em>Component</em>}'.
@@ -459,6 +504,24 @@ public interface ConciseNetlistPackage extends EPackage {
 		EReference NETLIST__COMPONENTS = eINSTANCE.getNetlist_Components();
 
 		/**
+		 * The meta object literal for the '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.impl.NamedElementImpl <em>Named Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.impl.NamedElementImpl
+		 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.impl.ConciseNetlistPackageImpl#getNamedElement()
+		 * @generated
+		 */
+		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.impl.NetImpl <em>Net</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -467,14 +530,6 @@ public interface ConciseNetlistPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NET = eINSTANCE.getNet();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NET__NAME = eINSTANCE.getNet_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Pins</b></em>' reference list feature.
@@ -495,14 +550,6 @@ public interface ConciseNetlistPackage extends EPackage {
 		EClass COMPONENT = eINSTANCE.getComponent();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPONENT__NAME = eINSTANCE.getComponent_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Pins</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -519,6 +566,14 @@ public interface ConciseNetlistPackage extends EPackage {
 		EAttribute COMPONENT__FEATURES = eINSTANCE.getComponent_Features();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Connected To</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMPONENT___IS_CONNECTED_TO__NET = eINSTANCE.getComponent__IsConnectedTo__Net();
+
+		/**
 		 * The meta object literal for the '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.impl.PinImpl <em>Pin</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -527,14 +582,6 @@ public interface ConciseNetlistPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PIN = eINSTANCE.getPin();
-
-		/**
-		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PIN__NUMBER = eINSTANCE.getPin_Number();
 
 		/**
 		 * The meta object literal for the '<em><b>Component</b></em>' container reference feature.

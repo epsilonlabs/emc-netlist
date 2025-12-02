@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.epsilon.netlist.model.conciseNetlist.Component;
 import org.eclipse.epsilon.netlist.model.conciseNetlist.ConciseNetlistPackage;
@@ -23,34 +22,13 @@ import org.eclipse.epsilon.netlist.model.conciseNetlist.Pin;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.epsilon.netlist.model.conciseNetlist.impl.PinImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link org.eclipse.epsilon.netlist.model.conciseNetlist.impl.PinImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link org.eclipse.epsilon.netlist.model.conciseNetlist.impl.PinImpl#getNet <em>Net</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PinImpl extends MinimalEObjectImpl.Container implements Pin {
-	/**
-	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int NUMBER_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected int number = NUMBER_EDEFAULT;
-
+public class PinImpl extends NamedElementImpl implements Pin {
 	/**
 	 * The cached value of the '{@link #getNet() <em>Net</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -78,29 +56,6 @@ public class PinImpl extends MinimalEObjectImpl.Container implements Pin {
 	@Override
 	protected EClass eStaticClass() {
 		return ConciseNetlistPackage.Literals.PIN;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int getNumber() {
-		return number;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setNumber(int newNumber) {
-		int oldNumber = number;
-		number = newNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConciseNetlistPackage.PIN__NUMBER, oldNumber, number));
 	}
 
 	/**
@@ -267,8 +222,6 @@ public class PinImpl extends MinimalEObjectImpl.Container implements Pin {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConciseNetlistPackage.PIN__NUMBER:
-				return getNumber();
 			case ConciseNetlistPackage.PIN__COMPONENT:
 				return getComponent();
 			case ConciseNetlistPackage.PIN__NET:
@@ -287,9 +240,6 @@ public class PinImpl extends MinimalEObjectImpl.Container implements Pin {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConciseNetlistPackage.PIN__NUMBER:
-				setNumber((Integer)newValue);
-				return;
 			case ConciseNetlistPackage.PIN__COMPONENT:
 				setComponent((Component)newValue);
 				return;
@@ -308,9 +258,6 @@ public class PinImpl extends MinimalEObjectImpl.Container implements Pin {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConciseNetlistPackage.PIN__NUMBER:
-				setNumber(NUMBER_EDEFAULT);
-				return;
 			case ConciseNetlistPackage.PIN__COMPONENT:
 				setComponent((Component)null);
 				return;
@@ -329,30 +276,12 @@ public class PinImpl extends MinimalEObjectImpl.Container implements Pin {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConciseNetlistPackage.PIN__NUMBER:
-				return number != NUMBER_EDEFAULT;
 			case ConciseNetlistPackage.PIN__COMPONENT:
 				return getComponent() != null;
 			case ConciseNetlistPackage.PIN__NET:
 				return net != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (number: ");
-		result.append(number);
-		result.append(')');
-		return result.toString();
 	}
 
 } //PinImpl

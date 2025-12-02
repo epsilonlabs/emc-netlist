@@ -4,6 +4,7 @@ package org.eclipse.epsilon.netlist.model.conciseNetlist.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -12,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.epsilon.netlist.model.conciseNetlist.Component;
 import org.eclipse.epsilon.netlist.model.conciseNetlist.ConciseNetlistFactory;
 import org.eclipse.epsilon.netlist.model.conciseNetlist.ConciseNetlistPackage;
+import org.eclipse.epsilon.netlist.model.conciseNetlist.NamedElement;
 import org.eclipse.epsilon.netlist.model.conciseNetlist.Net;
 import org.eclipse.epsilon.netlist.model.conciseNetlist.Netlist;
 import org.eclipse.epsilon.netlist.model.conciseNetlist.Pin;
@@ -29,6 +31,13 @@ public class ConciseNetlistPackageImpl extends EPackageImpl implements ConciseNe
 	 * @generated
 	 */
 	private EClass netlistEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass namedElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,6 +156,26 @@ public class ConciseNetlistPackageImpl extends EPackageImpl implements ConciseNe
 	 * @generated
 	 */
 	@Override
+	public EClass getNamedElement() {
+		return namedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getNamedElement_Name() {
+		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getNet() {
 		return netEClass;
 	}
@@ -157,18 +186,8 @@ public class ConciseNetlistPackageImpl extends EPackageImpl implements ConciseNe
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNet_Name() {
-		return (EAttribute)netEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getNet_Pins() {
-		return (EReference)netEClass.getEStructuralFeatures().get(1);
+		return (EReference)netEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -187,18 +206,8 @@ public class ConciseNetlistPackageImpl extends EPackageImpl implements ConciseNe
 	 * @generated
 	 */
 	@Override
-	public EAttribute getComponent_Name() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getComponent_Pins() {
-		return (EReference)componentEClass.getEStructuralFeatures().get(1);
+		return (EReference)componentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -208,7 +217,17 @@ public class ConciseNetlistPackageImpl extends EPackageImpl implements ConciseNe
 	 */
 	@Override
 	public EAttribute getComponent_Features() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)componentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getComponent__IsConnectedTo__Net() {
+		return componentEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -227,18 +246,8 @@ public class ConciseNetlistPackageImpl extends EPackageImpl implements ConciseNe
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPin_Number() {
-		return (EAttribute)pinEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getPin_Component() {
-		return (EReference)pinEClass.getEStructuralFeatures().get(1);
+		return (EReference)pinEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -248,7 +257,7 @@ public class ConciseNetlistPackageImpl extends EPackageImpl implements ConciseNe
 	 */
 	@Override
 	public EReference getPin_Net() {
-		return (EReference)pinEClass.getEStructuralFeatures().get(2);
+		return (EReference)pinEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -284,17 +293,18 @@ public class ConciseNetlistPackageImpl extends EPackageImpl implements ConciseNe
 		createEReference(netlistEClass, NETLIST__NETS);
 		createEReference(netlistEClass, NETLIST__COMPONENTS);
 
+		namedElementEClass = createEClass(NAMED_ELEMENT);
+		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
+
 		netEClass = createEClass(NET);
-		createEAttribute(netEClass, NET__NAME);
 		createEReference(netEClass, NET__PINS);
 
 		componentEClass = createEClass(COMPONENT);
-		createEAttribute(componentEClass, COMPONENT__NAME);
 		createEReference(componentEClass, COMPONENT__PINS);
 		createEAttribute(componentEClass, COMPONENT__FEATURES);
+		createEOperation(componentEClass, COMPONENT___IS_CONNECTED_TO__NET);
 
 		pinEClass = createEClass(PIN);
-		createEAttribute(pinEClass, PIN__NUMBER);
 		createEReference(pinEClass, PIN__COMPONENT);
 		createEReference(pinEClass, PIN__NET);
 	}
@@ -327,23 +337,29 @@ public class ConciseNetlistPackageImpl extends EPackageImpl implements ConciseNe
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		netEClass.getESuperTypes().add(this.getNamedElement());
+		componentEClass.getESuperTypes().add(this.getNamedElement());
+		pinEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(netlistEClass, Netlist.class, "Netlist", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNetlist_Nets(), this.getNet(), null, "nets", null, 0, -1, Netlist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNetlist_Components(), this.getComponent(), null, "components", null, 0, -1, Netlist.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(netEClass, Net.class, "Net", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNet_Name(), ecorePackage.getEString(), "name", null, 0, 1, Net.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNet_Pins(), this.getPin(), this.getPin_Net(), "pins", null, 0, -1, Net.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponent_Pins(), this.getPin(), this.getPin_Component(), "pins", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponent_Features(), ecorePackage.getEString(), "features", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		EOperation op = initEOperation(getComponent__IsConnectedTo__Net(), ecorePackage.getEBoolean(), "isConnectedTo", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getNet(), "net", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(pinEClass, Pin.class, "Pin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPin_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPin_Component(), this.getComponent(), this.getComponent_Pins(), "component", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPin_Net(), this.getNet(), this.getNet_Pins(), "net", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -72,21 +72,30 @@ public class ConciseNetlistSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ConciseNetlistPackage.NAMED_ELEMENT: {
+				NamedElement namedElement = (NamedElement)theEObject;
+				T result = caseNamedElement(namedElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ConciseNetlistPackage.NET: {
 				Net net = (Net)theEObject;
 				T result = caseNet(net);
+				if (result == null) result = caseNamedElement(net);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ConciseNetlistPackage.COMPONENT: {
 				Component component = (Component)theEObject;
 				T result = caseComponent(component);
+				if (result == null) result = caseNamedElement(component);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ConciseNetlistPackage.PIN: {
 				Pin pin = (Pin)theEObject;
 				T result = casePin(pin);
+				if (result == null) result = caseNamedElement(pin);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -106,6 +115,21 @@ public class ConciseNetlistSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNetlist(Netlist object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 

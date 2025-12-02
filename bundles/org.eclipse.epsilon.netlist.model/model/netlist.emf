@@ -6,19 +6,24 @@ class Netlist {
 	val Component[*] components;
 }
 
-class Net {
+abstract class NamedElement {
 	attr String name;
+}
+
+class Net extends NamedElement {
 	ref Pin[*]#net pins;
 }
 
-class Component {
-	attr String name;
+class Component extends NamedElement  {
 	val Pin[*]#component pins;
 	attr String[*] features;
+
+    // Note: would it make more sense to have something that computes
+    // the shortest path from the component to the net, if it exists?
+	op boolean isConnectedTo(Net net);
 }
 
-class Pin {
-	attr int number;
+class Pin extends NamedElement  {
 	ref Component#pins component;
 	ref Net#pins net;
 }

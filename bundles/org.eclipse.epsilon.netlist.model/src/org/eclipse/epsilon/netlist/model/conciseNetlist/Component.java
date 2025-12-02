@@ -4,8 +4,6 @@ package org.eclipse.epsilon.netlist.model.conciseNetlist;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Component</b></em>'.
@@ -15,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Component#getName <em>Name</em>}</li>
  *   <li>{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Component#getPins <em>Pins</em>}</li>
  *   <li>{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Component#getFeatures <em>Features</em>}</li>
  * </ul>
@@ -24,29 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Component extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.ConciseNetlistPackage#getComponent_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Component#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
+public interface Component extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Pins</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.epsilon.netlist.model.conciseNetlist.Pin}.
@@ -72,5 +47,13 @@ public interface Component extends EObject {
 	 * @generated
 	 */
 	EList<String> getFeatures();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean isConnectedTo(Net net);
 
 } // Component

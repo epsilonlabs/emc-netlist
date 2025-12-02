@@ -13,7 +13,7 @@
         </nodeMappings>
         <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.component" label="Component Node" semanticCandidatesExpression="feature:components" domainClass="conciseNetlist::Component">
           <borderedNodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.pin" label="Pin Border Node" semanticCandidatesExpression="feature:pins" domainClass="conciseNetlist::Pin">
-            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="feature:number" labelPosition="node" resizeKind="NSEW" width="2" height="2">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="2" height="2">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>

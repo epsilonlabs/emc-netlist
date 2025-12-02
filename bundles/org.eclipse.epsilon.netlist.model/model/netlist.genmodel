@@ -11,17 +11,20 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference netlist.ecore#//Netlist/nets"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference netlist.ecore#//Netlist/components"/>
     </genClasses>
+    <genClasses image="false" ecoreClass="netlist.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute netlist.ecore#//NamedElement/name"/>
+    </genClasses>
     <genClasses ecoreClass="netlist.ecore#//Net">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute netlist.ecore#//Net/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference netlist.ecore#//Net/pins"/>
     </genClasses>
     <genClasses ecoreClass="netlist.ecore#//Component">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute netlist.ecore#//Component/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference netlist.ecore#//Component/pins"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute netlist.ecore#//Component/features"/>
+      <genOperations ecoreOperation="netlist.ecore#//Component/isConnectedTo">
+        <genParameters ecoreParameter="netlist.ecore#//Component/isConnectedTo/net"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="netlist.ecore#//Pin">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute netlist.ecore#//Pin/number"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference netlist.ecore#//Pin/component"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference netlist.ecore#//Pin/net"/>
     </genClasses>

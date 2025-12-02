@@ -2,8 +2,6 @@
  */
 package org.eclipse.epsilon.netlist.model.conciseNetlist;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Pin</b></em>'.
@@ -13,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Pin#getNumber <em>Number</em>}</li>
  *   <li>{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Pin#getComponent <em>Component</em>}</li>
  *   <li>{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Pin#getNet <em>Net</em>}</li>
  * </ul>
@@ -22,29 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Pin extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Number</em>' attribute.
-	 * @see #setNumber(int)
-	 * @see org.eclipse.epsilon.netlist.model.conciseNetlist.ConciseNetlistPackage#getPin_Number()
-	 * @model
-	 * @generated
-	 */
-	int getNumber();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Pin#getNumber <em>Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Number</em>' attribute.
-	 * @see #getNumber()
-	 * @generated
-	 */
-	void setNumber(int value);
-
+public interface Pin extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Component</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link org.eclipse.epsilon.netlist.model.conciseNetlist.Component#getPins <em>Pins</em>}'.
