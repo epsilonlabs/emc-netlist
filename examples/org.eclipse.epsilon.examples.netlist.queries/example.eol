@@ -3,8 +3,12 @@
 for (cmp in Component.all) {
   cmp.name.println('---\nComponent: ');
   for (pin in cmp.pins) {
-    pin.net.println('Connected on pin ' + pin.number + ': ');
+    pin.net.println('Connected on pin ' + pin.name + ': ');
   }
+
+  cmp.isConnectedTo(Net.all.selectOne(n|n.name = '10V'))
+     .println('Connected to 10V: ');
+
   cmp.features.println('Features: ');
 }
 
