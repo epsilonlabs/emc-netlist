@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="viewpoint" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="viewpoint" version="15.4.0.202401051836">
   <ownedViewpoints name="org.eclipse.epsilon.netlist.viewpoint" label="Netlist Viewpoint" modelFileExtension="dat">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.eclipse.epsilon.netlist.viewpoint.diagram" label="Netlist Diagram" domainClass="conciseNetlist::Netlist" enablePopupBars="true">
       <metamodel href="http://eclipse.org/epsilon/netlist/concise#/"/>
+      <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.graphviz.dot" label="Graphviz Dot" description="Layered drawings of directed graphs. The algorithm aims edges in the same direction (top to bottom, or left to right) and then attempts to avoid edge crossings and reduce edge length. Edges are routed as spline curves and are thus drawn very smoothly. This algorithm is very suitable for state machine and activity diagrams, where the direction of edges has an important role."/>
       <defaultLayer name="Default">
         <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.net" label="Net Node" semanticCandidatesExpression="feature:nets" domainClass="conciseNetlist::Net">
-          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="-1" height="-1">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="-1" height="-1" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='net_color']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.component" label="Component Node" semanticCandidatesExpression="feature:components" domainClass="conciseNetlist::Component">
           <borderedNodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.pin" label="Pin Border Node" semanticCandidatesExpression="feature:pins" domainClass="conciseNetlist::Pin">
-            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="2" height="2">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW" width="4" height="2" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='pin_color']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </borderedNodeMappings>
-          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="10" height="4">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="10" height="4" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='component_color']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
           </style>
         </nodeMappings>
         <edgeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.pinToNet" label="Pin-Net Edge" sourceMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.pin']" targetMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.net']" targetFinderExpression="feature:net">
@@ -35,6 +33,91 @@
         </edgeMappings>
       </defaultLayer>
     </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.eclipse.epsilon.netlist.viewpoint.net.diagram" label="Net Diagram" domainClass="conciseNetlist::Net" enablePopupBars="true">
+      <metamodel href="http://eclipse.org/epsilon/netlist/concise#/"/>
+      <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.graphviz.dot" label="Graphviz Dot" description="Layered drawings of directed graphs. The algorithm aims edges in the same direction (top to bottom, or left to right) and then attempts to avoid edge crossings and reduce edge length. Edges are routed as spline curves and are thus drawn very smoothly. This algorithm is very suitable for state machine and activity diagrams, where the direction of edges has an important role.">
+        <layoutOptions xsi:type="description_1:BooleanLayoutOption" id="org.eclipse.elk.graphviz.concentrate" value="true">
+          <targets>PARENT</targets>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.edgeRouting">
+          <targets>PARENT</targets>
+          <value name="ORTHOGONAL"/>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:DoubleLayoutOption" id="org.eclipse.elk.spacing.nodeNode" value="40.0">
+          <targets>PARENT</targets>
+        </layoutOptions>
+      </layout>
+      <defaultLayer name="Default">
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.netdiagram.net" label="Net Node" semanticCandidatesExpression="var:self" domainClass="conciseNetlist::Net">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="4" labelPosition="node" resizeKind="NSEW" width="-1" height="-1" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='net_color']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.netdiagram.component" label="Component Node" semanticCandidatesExpression="aql:self.pins.component" domainClass="conciseNetlist::Component">
+          <borderedNodeMappings name="org.eclipse.epsilon.netlist.viewpoint.netdiagram.pin" label="Pin Border Node" semanticCandidatesExpression="aql:self.pins->intersection(diagram.nodes.semanticElements->select(e|e.oclIsKindOf(conciseNetlist::Net))->first().pins)" domainClass="conciseNetlist::Pin">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW" width="4" height="2" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='pin_color']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="4" labelPosition="node" resizeKind="NSEW" width="-1" height="-1" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='component_color']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="org.eclipse.epsilon.netlist.viewpoint.netdiagram.netToPin" label="Net to Pin edge" sourceMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.net.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.netdiagram.net']" targetMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.net.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.netdiagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.netdiagram.pin']" targetFinderExpression="feature:pins">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.eclipse.epsilon.netlist.viewpoint.component.diagram" label="Component Diagram" domainClass="conciseNetlist::Component" enablePopupBars="true">
+      <metamodel href="http://eclipse.org/epsilon/netlist/concise#/"/>
+      <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.graphviz.neato" label="Graphviz Neato" description="Spring model layouts. Neato attempts to minimize a global energy function, which is equivalent to statistical multi-dimensional scaling. The solution is achieved using stress majorization, though the older Kamada-Kawai algorithm, using steepest descent, is also available.">
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.edgeRouting">
+          <targets>PARENT</targets>
+          <value name="ORTHOGONAL"/>
+        </layoutOptions>
+      </layout>
+      <defaultLayer name="Default">
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.cmpdiagram.component" label="Component Node" semanticCandidatesExpression="var:self" domainClass="conciseNetlist::Component">
+          <borderedNodeMappings name="org.eclipse.epsilon.netlist.viewpoint.cmpdiagram.pin" label="Pin Border Node" semanticCandidatesExpression="feature:pins" domainClass="conciseNetlist::Pin">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW" width="4" height="2" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='pin_color']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="aql:self.pins->size()" labelPosition="node" resizeKind="NSEW" width="-1" height="-1" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='component_color']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.netdiagram.net" label="Net Node" semanticCandidatesExpression="aql:self.pins.net" domainClass="conciseNetlist::Net">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="-1" height="-1" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='net_color']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="org.eclipse.epsilon.netlist.viewpoint.cmpdiagram.netToPin" label="Net to Pin edge" sourceMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.component.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.netdiagram.net']" targetMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.component.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.cmpdiagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.cmpdiagram.pin']" targetFinderExpression="feature:pins">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.eclipse.epsilon.netlist.viewpoint.Services"/>
   </ownedViewpoints>
+  <userColorsPalettes name="Element Palette">
+    <entries xsi:type="description:UserFixedColor" red="86" green="221" blue="255" name="net_color"/>
+    <entries xsi:type="description:UserFixedColor" red="184" green="255" blue="180" name="component_color"/>
+    <entries xsi:type="description:UserFixedColor" red="255" green="255" blue="255" name="pin_color"/>
+  </userColorsPalettes>
 </description:Group>
