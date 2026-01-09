@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://eclipse.org/epsilon/netlist/concise" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_Ob4qkL8jEfCYI57jxz9qwA" selectedViews="_Rao6sL8jEfCYI57jxz9qwA" version="15.4.1.202403191723">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://eclipse.org/epsilon/netlist/concise" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tree="http://www.eclipse.org/sirius/tree/1.0.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/tree/description/1.0.0 http://www.eclipse.org/sirius/tree/1.0.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_Ob4qkL8jEfCYI57jxz9qwA" selectedViews="_Rao6sL8jEfCYI57jxz9qwA" version="15.4.3.202406261640">
     <semanticResources>dialcnet.dat</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_Rao6sL8jEfCYI57jxz9qwA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_SSIjYL8jEfCYI57jxz9qwA" name="new Netlist Diagram" repPath="#_SSB1sL8jEfCYI57jxz9qwA" changeId="1762886517568">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_SSIjYL8jEfCYI57jxz9qwA" name="new Netlist Diagram" repPath="#_SSB1sL8jEfCYI57jxz9qwA" changeId="1767960668170">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']"/>
+        <target xmi:type="Netlist" href="dialcnet.dat#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_7TjUJO1LEfC6EPegCcPDBQ" name="new Tree Representation" repPath="#_7TbYUO1LEfC6EPegCcPDBQ" changeId="1767960683990">
+        <description xmi:type="description_2:TreeDescription" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.tree.diagram']"/>
         <target xmi:type="Netlist" href="dialcnet.dat#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
@@ -59,7 +63,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SSw1gr8jEfCYI57jxz9qwA"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_SStyMb8jEfCYI57jxz9qwA" fontName=".AppleSystemUIFont" fontHeight="12"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SStyMr8jEfCYI57jxz9qwA" x="-12" y="8" width="20" height="20"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SStyMr8jEfCYI57jxz9qwA" x="-12" y="8" width="40" height="20"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_SSwOcL8jEfCYI57jxz9qwA" type="3001" element="_SSa3Q78jEfCYI57jxz9qwA">
             <children xmi:type="notation:Node" xmi:id="_SSwOc78jEfCYI57jxz9qwA" type="5001">
@@ -70,7 +74,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SSw1hb8jEfCYI57jxz9qwA"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_SSwOcb8jEfCYI57jxz9qwA" fontName=".AppleSystemUIFont" fontHeight="12"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SSwOcr8jEfCYI57jxz9qwA" x="53" y="8" width="20" height="20"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SSwOcr8jEfCYI57jxz9qwA" x="53" y="8" width="40" height="20"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_SSwOdb8jEfCYI57jxz9qwA" type="3003" element="_SSaQNb8jEfCYI57jxz9qwA">
             <styles xmi:type="notation:ShapeStyle" xmi:id="_SSwOdr8jEfCYI57jxz9qwA" fontName=".AppleSystemUIFont"/>
@@ -92,7 +96,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SSxclb8jEfCYI57jxz9qwA"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_SSw1h78jEfCYI57jxz9qwA" fontName=".AppleSystemUIFont" fontHeight="12"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SSw1iL8jEfCYI57jxz9qwA" x="92" y="8" width="20" height="20"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SSw1iL8jEfCYI57jxz9qwA" x="92" y="8" width="40" height="20"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_SSw1i78jEfCYI57jxz9qwA" type="3001" element="_SSa3Sb8jEfCYI57jxz9qwA">
             <children xmi:type="notation:Node" xmi:id="_SSw1jr8jEfCYI57jxz9qwA" type="5001">
@@ -103,7 +107,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SSxcmL8jEfCYI57jxz9qwA"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_SSw1jL8jEfCYI57jxz9qwA" fontName=".AppleSystemUIFont" fontHeight="12"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SSw1jb8jEfCYI57jxz9qwA" x="-12" y="8" width="20" height="20"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SSw1jb8jEfCYI57jxz9qwA" x="-12" y="8" width="40" height="20"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_SSxckL8jEfCYI57jxz9qwA" type="3003" element="_SSaQOL8jEfCYI57jxz9qwA">
             <styles xmi:type="notation:ShapeStyle" xmi:id="_SSxckb8jEfCYI57jxz9qwA" fontName=".AppleSystemUIFont"/>
@@ -185,7 +189,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_SSXM4L8jEfCYI57jxz9qwA" name="0V" incomingEdges="_SSdTgL8jEfCYI57jxz9qwA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="Net" href="dialcnet.dat#//@nets.0"/>
       <semanticElements xmi:type="Net" href="dialcnet.dat#//@nets.0"/>
-      <ownedStyle xmi:type="diagram:Square" uid="_SSZCEL8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="-1" height="-1" color="194,239,255">
+      <ownedStyle xmi:type="diagram:Square" uid="_SSZCEL8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="-1" height="-1" color="86,221,255">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.net']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.net']"/>
@@ -193,7 +197,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_SSZpIL8jEfCYI57jxz9qwA" name="10V" incomingEdges="_SSd6mb8jEfCYI57jxz9qwA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="Net" href="dialcnet.dat#//@nets.1"/>
       <semanticElements xmi:type="Net" href="dialcnet.dat#//@nets.1"/>
-      <ownedStyle xmi:type="diagram:Square" uid="_SSZpIb8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="-1" height="-1" color="194,239,255">
+      <ownedStyle xmi:type="diagram:Square" uid="_SSZpIb8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="-1" height="-1" color="86,221,255">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.net']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.net']"/>
@@ -201,7 +205,7 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_SSaQMb8jEfCYI57jxz9qwA" name="UNNAMED_1_0805NPO_I1_A" incomingEdges="_SSd6lL8jEfCYI57jxz9qwA _SSd6nr8jEfCYI57jxz9qwA" width="3" height="3" resizeKind="NSEW">
       <target xmi:type="Net" href="dialcnet.dat#//@nets.2"/>
       <semanticElements xmi:type="Net" href="dialcnet.dat#//@nets.2"/>
-      <ownedStyle xmi:type="diagram:Square" uid="_SSaQMr8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="-1" height="-1" color="194,239,255">
+      <ownedStyle xmi:type="diagram:Square" uid="_SSaQMr8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="-1" height="-1" color="86,221,255">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.net']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.net']"/>
@@ -209,23 +213,23 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_SSaQNL8jEfCYI57jxz9qwA" name="C1" width="10" height="4" resizeKind="NSEW">
       <target xmi:type="Component" href="dialcnet.dat#//@components.0"/>
       <semanticElements xmi:type="Component" href="dialcnet.dat#//@components.0"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_SSa3QL8jEfCYI57jxz9qwA" name="2" outgoingEdges="_SSdTgL8jEfCYI57jxz9qwA" width="2" height="2" resizeKind="NSEW">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_SSa3QL8jEfCYI57jxz9qwA" name="2" outgoingEdges="_SSdTgL8jEfCYI57jxz9qwA" width="4" height="2" resizeKind="NSEW">
         <target xmi:type="Pin" href="dialcnet.dat#//@components.0/@pins.0"/>
         <semanticElements xmi:type="Pin" href="dialcnet.dat#//@components.0/@pins.0"/>
-        <ownedStyle xmi:type="diagram:Square" uid="_SSa3Qb8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="2" height="2" color="255,255,255">
+        <ownedStyle xmi:type="diagram:Square" uid="_SSa3Qb8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="4" height="2" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.pin']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.pin']"/>
       </ownedBorderedNodes>
-      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_SSa3Q78jEfCYI57jxz9qwA" name="1" outgoingEdges="_SSd6lL8jEfCYI57jxz9qwA" width="2" height="2" resizeKind="NSEW">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_SSa3Q78jEfCYI57jxz9qwA" name="1" outgoingEdges="_SSd6lL8jEfCYI57jxz9qwA" width="4" height="2" resizeKind="NSEW">
         <target xmi:type="Pin" href="dialcnet.dat#//@components.0/@pins.1"/>
         <semanticElements xmi:type="Pin" href="dialcnet.dat#//@components.0/@pins.1"/>
-        <ownedStyle xmi:type="diagram:Square" uid="_SSa3RL8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="2" height="2" color="255,255,255">
+        <ownedStyle xmi:type="diagram:Square" uid="_SSa3RL8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="4" height="2" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.pin']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.pin']"/>
       </ownedBorderedNodes>
-      <ownedStyle xmi:type="diagram:Square" uid="_SSaQNb8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="10" height="4" color="204,242,166">
+      <ownedStyle xmi:type="diagram:Square" uid="_SSaQNb8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="10" height="4" color="184,255,180">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']"/>
@@ -233,23 +237,23 @@
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_SSaQN78jEfCYI57jxz9qwA" name="R1" width="10" height="4" resizeKind="NSEW">
       <target xmi:type="Component" href="dialcnet.dat#//@components.1"/>
       <semanticElements xmi:type="Component" href="dialcnet.dat#//@components.1"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_SSa3Rr8jEfCYI57jxz9qwA" name="1" outgoingEdges="_SSd6mb8jEfCYI57jxz9qwA" width="2" height="2" resizeKind="NSEW">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_SSa3Rr8jEfCYI57jxz9qwA" name="1" outgoingEdges="_SSd6mb8jEfCYI57jxz9qwA" width="4" height="2" resizeKind="NSEW">
         <target xmi:type="Pin" href="dialcnet.dat#//@components.1/@pins.0"/>
         <semanticElements xmi:type="Pin" href="dialcnet.dat#//@components.1/@pins.0"/>
-        <ownedStyle xmi:type="diagram:Square" uid="_SSa3R78jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="2" height="2" color="255,255,255">
+        <ownedStyle xmi:type="diagram:Square" uid="_SSa3R78jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="4" height="2" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.pin']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.pin']"/>
       </ownedBorderedNodes>
-      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_SSa3Sb8jEfCYI57jxz9qwA" name="2" outgoingEdges="_SSd6nr8jEfCYI57jxz9qwA" width="2" height="2" resizeKind="NSEW">
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_SSa3Sb8jEfCYI57jxz9qwA" name="2" outgoingEdges="_SSd6nr8jEfCYI57jxz9qwA" width="4" height="2" resizeKind="NSEW">
         <target xmi:type="Pin" href="dialcnet.dat#//@components.1/@pins.1"/>
         <semanticElements xmi:type="Pin" href="dialcnet.dat#//@components.1/@pins.1"/>
-        <ownedStyle xmi:type="diagram:Square" uid="_SSa3Sr8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="2" height="2" color="255,255,255">
+        <ownedStyle xmi:type="diagram:Square" uid="_SSa3Sr8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="4" height="2" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.pin']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.pin']"/>
       </ownedBorderedNodes>
-      <ownedStyle xmi:type="diagram:Square" uid="_SSaQOL8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="10" height="4" color="204,242,166">
+      <ownedStyle xmi:type="diagram:Square" uid="_SSaQOL8jEfCYI57jxz9qwA" labelSize="12" showIcon="false" labelPosition="node" width="10" height="4" color="184,255,180">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.diagram.component']"/>
@@ -291,4 +295,80 @@
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.diagram']/@defaultLayer"/>
     <target xmi:type="Netlist" href="dialcnet.dat#/"/>
   </diagram:DSemanticDiagram>
+  <tree:DTree uid="_7TbYUO1LEfC6EPegCcPDBQ">
+    <target xmi:type="Netlist" href="dialcnet.dat#/"/>
+    <ownedTreeItems xmi:type="tree:DTreeItem" uid="_7TfpwO1LEfC6EPegCcPDBQ" name="Named Nets">
+      <target xmi:type="Netlist" href="dialcnet.dat#/"/>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_7TitEO1LEfC6EPegCcPDBQ">
+        <target xmi:type="Net" href="dialcnet.dat#//@nets.0"/>
+        <semanticElements xmi:type="Net" href="dialcnet.dat#//@nets.0"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_7TitEe1LEfC6EPegCcPDBQ" labelColor="209,209,209" backgroundColor="209,209,209"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.tree.diagram']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.namedNets']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.namedNet']"/>
+      </ownedTreeItems>
+      <semanticElements xmi:type="Netlist" href="dialcnet.dat#/"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" uid="_7Tfpwe1LEfC6EPegCcPDBQ" labelSize="12">
+        <labelFormat>bold</labelFormat>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.tree.diagram']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.namedNets']"/>
+    </ownedTreeItems>
+    <ownedTreeItems xmi:type="tree:DTreeItem" uid="_7Tg34O1LEfC6EPegCcPDBQ" name="Unnamed Nets">
+      <target xmi:type="Netlist" href="dialcnet.dat#/"/>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_7TjUIO1LEfC6EPegCcPDBQ">
+        <target xmi:type="Net" href="dialcnet.dat#//@nets.2"/>
+        <semanticElements xmi:type="Net" href="dialcnet.dat#//@nets.2"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_7TjUIe1LEfC6EPegCcPDBQ" labelColor="209,209,209" backgroundColor="209,209,209"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.tree.diagram']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.unnamedNets']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.unnamedNet']"/>
+      </ownedTreeItems>
+      <semanticElements xmi:type="Netlist" href="dialcnet.dat#/"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" uid="_7Tg34e1LEfC6EPegCcPDBQ" labelSize="12">
+        <labelFormat>bold</labelFormat>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.tree.diagram']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.unnamedNets']"/>
+    </ownedTreeItems>
+    <ownedTreeItems xmi:type="tree:DTreeItem" uid="_7The8O1LEfC6EPegCcPDBQ" name="Components" expanded="true">
+      <target xmi:type="Netlist" href="dialcnet.dat#/"/>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_7TjUIu1LEfC6EPegCcPDBQ" name="Component C1 (0805_NPO-SC0266-221G, 0805_NPO, A)" expanded="true">
+        <target xmi:type="Component" href="dialcnet.dat#//@components.0"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_7kiWcO1LEfC6EPegCcPDBQ" name="Component Pin 1 to UNNAMED_1_0805NPO_I1_A">
+          <target xmi:type="Pin" href="dialcnet.dat#//@components.0/@pins.1"/>
+          <semanticElements xmi:type="Pin" href="dialcnet.dat#//@components.0/@pins.1"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_7kiWce1LEfC6EPegCcPDBQ" labelSize="12"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.tree.diagram']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.components']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.components']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.componentPin']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_7rBY8O1LEfC6EPegCcPDBQ" name="Component Pin 2 to 0V">
+          <target xmi:type="Pin" href="dialcnet.dat#//@components.0/@pins.0"/>
+          <semanticElements xmi:type="Pin" href="dialcnet.dat#//@components.0/@pins.0"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_7rBY8e1LEfC6EPegCcPDBQ" labelSize="12"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.tree.diagram']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.components']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.components']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.componentPin']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="Component" href="dialcnet.dat#//@components.0"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_7TjUI-1LEfC6EPegCcPDBQ" labelSize="12"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.tree.diagram']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.components']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.components']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_7kf6MO1LEfC6EPegCcPDBQ" name="Component R1 (RC02G-SR0075-101F, RC02G, 100.0RA)" expanded="true">
+        <target xmi:type="Component" href="dialcnet.dat#//@components.1"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_7kiWcu1LEfC6EPegCcPDBQ" name="Component Pin 1 to 10V">
+          <target xmi:type="Pin" href="dialcnet.dat#//@components.1/@pins.0"/>
+          <semanticElements xmi:type="Pin" href="dialcnet.dat#//@components.1/@pins.0"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_7kiWc-1LEfC6EPegCcPDBQ" labelSize="12"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.tree.diagram']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.components']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.components']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.componentPin']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_7zKoUO1LEfC6EPegCcPDBQ" name="Component Pin 2 to UNNAMED_1_0805NPO_I1_A">
+          <target xmi:type="Pin" href="dialcnet.dat#//@components.1/@pins.1"/>
+          <semanticElements xmi:type="Pin" href="dialcnet.dat#//@components.1/@pins.1"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_7zKoUe1LEfC6EPegCcPDBQ" labelSize="12"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.tree.diagram']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.components']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.components']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.componentPin']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="Component" href="dialcnet.dat#//@components.1"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_7kf6Me1LEfC6EPegCcPDBQ" labelSize="12"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.tree.diagram']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.components']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.components']"/>
+      </ownedTreeItems>
+      <semanticElements xmi:type="Netlist" href="dialcnet.dat#/"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" uid="_7The8e1LEfC6EPegCcPDBQ" labelSize="12">
+        <labelFormat>bold</labelFormat>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.tree.diagram']/@subItemMappings[name='org.eclipse.epsilon.netlist.viewpoint.tree.components']"/>
+    </ownedTreeItems>
+    <description xmi:type="description_2:TreeDescription" href="platform:/resource/org.eclipse.epsilon.netlist.viewpoint/description/viewpoint.odesign#//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.tree.diagram']"/>
+  </tree:DTree>
 </xmi:XMI>
