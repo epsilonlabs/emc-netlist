@@ -23,7 +23,7 @@ This also makes it possible to take a concise netlist like the [example one](./e
 
 ## Metamodel
 
-The metamodel implemented by this EMF driver is as follows:
+The metamodel implemented by this EMC driver is as follows:
 
 ```mermaid
 ---
