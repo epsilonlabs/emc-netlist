@@ -8,6 +8,8 @@ This also makes it possible to take a concise netlist like the [example one](./e
 
 ![Example netlist from Sirius](images/example-netlist-diagram.png)
 
+*Note*: the resource factory and EMC driver only support reading netlists. Saving changes is not supported.
+
 ## Repository structure
 
 * `bundles`: Eclipse plugins implementing the EMF resource factory, EMC driver, and tooling.
