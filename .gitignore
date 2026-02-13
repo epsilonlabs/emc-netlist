@@ -1,110 +1,48 @@
-# binaries
-bin/
-target
-target-plain
+# Compiled class file
+*.class
 
-# Unwanted JARs
-/tests/org.eclipse.epsilon.egl.engine.test.dependencies/dependencies.jar
-/plugins/org.eclipse.epsilon.ewl.emf/org.eclipse.epsilon.ewl.emf.jar
-/releng/org.eclipse.epsilon.updatesite/*.jar
+# Log file
+*.log
 
-# Ignore IntelliJ files
-*.iml
-*.idea/
+# BlueJ files
+*.ctxt
 
-# Maven version bump artifacts
-*.versionsBackup
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
 
-# Debug files
-*.phd
-*.trc
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
 
-# Ignore sym-link to project stored in EpsilonLabs
-/plugins/org.eclipse.epsilon.antlr.dev
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+replay_pid*
 
-# Ignore Mac OS index files
+# Mac files
 .DS_Store
 
-# /doc/org.eclipse.epsilon.book/
-/doc/org.eclipse.epsilon.book/*.aux
-/doc/org.eclipse.epsilon.book/*.bbl
-/doc/org.eclipse.epsilon.book/*.blg
-/doc/org.eclipse.epsilon.book/*.dvi
-/doc/org.eclipse.epsilon.book/*.fdb*
-/doc/org.eclipse.epsilon.book/*.lof
-/doc/org.eclipse.epsilon.book/*.lot
-/doc/org.eclipse.epsilon.book/*.out
-/doc/org.eclipse.epsilon.book/*.synctex.*
-/doc/org.eclipse.epsilon.book/*.toc
-/doc/org.eclipse.epsilon.book/*.log
-/doc/org.eclipse.epsilon.book/*.fls
-/doc/org.eclipse.epsilon.book/auto
+# Maven output
+target/
+target-plain/
 
-# /examples/org.eclipse.epsilon.workflow.extension.example/
-/examples/org.eclipse.epsilon.workflow.extension.example/lib/org.eclipse.epsilon.workflow.extension.example.jar
+# VS Code settings
+.vscode/
 
-# /plugins/org.eclipse.epsilon.emc.emf.dt/src/org/eclipse/epsilon/emc/emf/dt/
-/plugins/org.eclipse.epsilon.emc.emf.dt/src/org/eclipse/epsilon/emc/emf/dt/parex
+# Tycho temporary files
+*.polyglot*
+*.tycho
+*.META-INF_MANIFEST.MF
+org.eclipse.m2e.core.prefs
 
-# /plugins/org.eclipse.epsilon.help/
-/plugins/org.eclipse.epsilon.help/Thumbs.db
-
-# /plugins/org.eclipse.epsilon.updatesite/
-/plugins/org.eclipse.epsilon.updatesite/features
-/plugins/org.eclipse.epsilon.updatesite/plugins
-
-# /plugins/org.eclipse.epsilon.workflow/
-/plugins/org.eclipse.epsilon.workflow/epsilon-ant-standalone.jar
-
-# /plugins/org.eclipse.epsilon.workflow/lib/
-/plugins/org.eclipse.epsilon.workflow/lib/*.jar
-/plugins/org.eclipse.epsilon.workflow/lib/*.tmp
-
-# /plugins/org.eclipse.epsilon.workflow.emf/lib/
-/plugins/org.eclipse.epsilon.workflow.emf/lib/*.jar
-
-# /serverside/org.eclipse.epsilon.egl.servlet/
-/serverside/org.eclipse.epsilon.egl.servlet/build
-
-# /tests/org.eclipse.epsilon.eol.engine.test.acceptance/
-/tests/org.eclipse.epsilon.eol.engine.test.acceptance/TEST-*.xml
-
-# /tests/org.eclipse.epsilon.hutn.test/
-/tests/org.eclipse.epsilon.hutn.test/foo.ecore
-
-# /tests/org.eclipse.epsilon.hutn.test.unit/
-/tests/org.eclipse.epsilon.hutn.test.unit/foo.ecore
-
-# /tests/org.eclipse.epsilon.test/
-/tests/org.eclipse.epsilon.test/TEST-default.CreateDeleteTests.xml
-/tests/org.eclipse.epsilon.test/TEST-default.AssignmentTests.xml
-/tests/org.eclipse.epsilon.test/TEST-default.ComparisonTests.xml
-/tests/org.eclipse.epsilon.test/TEST-default.MathTests.xml
-/tests/org.eclipse.epsilon.test/TEST-default.EqualityTests.xml
-/tests/org.eclipse.epsilon.test/TEST-default.CollectionsTests.xml
-/tests/org.eclipse.epsilon.test/TEST-default.AnnotatedOperationTests.xml
-/tests/org.eclipse.epsilon.test/TEST-default.IsDefinedTests.xml
-/tests/org.eclipse.epsilon.test/foo.ecore
-/tests/org.eclipse.epsilon.test/TEST-default.StringTests.xml
-/tests/org.eclipse.epsilon.test/TEST-*.xml
-
-# /tests/org.eclipse.epsilon.workflow.test/resources/
-/tests/org.eclipse.epsilon.workflow.test/resources/TEST-default.sample.xml
-
-# /tests/org.eclipse.epsilon.workflow.test/resources/eunit/
-/tests/org.eclipse.epsilon.workflow.test/resources/eunit/TESTS-TestSuites.xml
-/tests/org.eclipse.epsilon.workflow.test/resources/eunit/junit-noframes.html
-
-/plugins/org.eclipse.epsilon.updatesite.interim/index.html
-
-# Backup files from Emacs
-*~
-*.swp
-
-# EUnit test files in examples
-/examples/**/TEST-*.xml
-/examples/**/DELTA-*.xmi
-/examples/**/eunit-temp/
-
-# Metadata from Dash tool
-DEPENDENCIES*
+# Eclipse IDE metadata in non-project folders
+/.project
+/bundles/.project
+/examples/.project
+/features/.project
+/releng/.project
+/tests/.project
