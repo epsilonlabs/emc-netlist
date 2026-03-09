@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="viewpoint" version="15.4.0.202401051836">
   <ownedViewpoints name="org.eclipse.epsilon.netlist.viewpoint" label="Netlist Viewpoint" modelFileExtension="dat">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.eclipse.epsilon.netlist.viewpoint.diagram" label="Netlist Diagram" domainClass="conciseNetlist::Netlist" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.eclipse.epsilon.netlist.viewpoint.diagram" label="Netlist Diagram" domainClass="concise::Netlist" enablePopupBars="true">
       <metamodel href="http://eclipse.org/epsilon/netlist/concise#/"/>
       <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.graphviz.dot" label="Graphviz Dot" description="Layered drawings of directed graphs. The algorithm aims edges in the same direction (top to bottom, or left to right) and then attempts to avoid edge crossings and reduce edge length. Edges are routed as spline curves and are thus drawn very smoothly. This algorithm is very suitable for state machine and activity diagrams, where the direction of edges has an important role."/>
       <defaultLayer name="Default">
-        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.net" label="Net Node" semanticCandidatesExpression="feature:nets" domainClass="conciseNetlist::Net">
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.net" label="Net Node" semanticCandidatesExpression="feature:nets" domainClass="concise::Net">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="-1" height="-1" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='net_color']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.component" label="Component Node" semanticCandidatesExpression="feature:components" domainClass="conciseNetlist::Component">
-          <borderedNodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.pin" label="Pin Border Node" semanticCandidatesExpression="feature:pins" domainClass="conciseNetlist::Pin">
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.component" label="Component Node" semanticCandidatesExpression="feature:components" domainClass="concise::Component">
+          <borderedNodeMappings name="org.eclipse.epsilon.netlist.viewpoint.diagram.pin" label="Pin Border Node" semanticCandidatesExpression="feature:pins" domainClass="concise::Pin">
             <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW" width="4" height="2" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='pin_color']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -33,7 +33,7 @@
         </edgeMappings>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.eclipse.epsilon.netlist.viewpoint.net.diagram" label="Net Diagram" domainClass="conciseNetlist::Net" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.eclipse.epsilon.netlist.viewpoint.net.diagram" label="Net Diagram" domainClass="concise::Net" enablePopupBars="true">
       <metamodel href="http://eclipse.org/epsilon/netlist/concise#/"/>
       <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.graphviz.dot" label="Graphviz Dot" description="Layered drawings of directed graphs. The algorithm aims edges in the same direction (top to bottom, or left to right) and then attempts to avoid edge crossings and reduce edge length. Edges are routed as spline curves and are thus drawn very smoothly. This algorithm is very suitable for state machine and activity diagrams, where the direction of edges has an important role.">
         <layoutOptions xsi:type="description_1:BooleanLayoutOption" id="org.eclipse.elk.graphviz.concentrate" value="true">
@@ -48,14 +48,14 @@
         </layoutOptions>
       </layout>
       <defaultLayer name="Default">
-        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.netdiagram.net" label="Net Node" semanticCandidatesExpression="var:self" domainClass="conciseNetlist::Net">
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.netdiagram.net" label="Net Node" semanticCandidatesExpression="var:self" domainClass="concise::Net">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="4" labelPosition="node" resizeKind="NSEW" width="-1" height="-1" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='net_color']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.netdiagram.component" label="Component Node" semanticCandidatesExpression="aql:self.pins.component" domainClass="conciseNetlist::Component">
-          <borderedNodeMappings name="org.eclipse.epsilon.netlist.viewpoint.netdiagram.pin" label="Pin Border Node" semanticCandidatesExpression="aql:self.pins->intersection(diagram.nodes.semanticElements->select(e|e.oclIsKindOf(conciseNetlist::Net))->first().pins)" domainClass="conciseNetlist::Pin">
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.netdiagram.component" label="Component Node" semanticCandidatesExpression="aql:self.pins.component" domainClass="concise::Component">
+          <borderedNodeMappings name="org.eclipse.epsilon.netlist.viewpoint.netdiagram.pin" label="Pin Border Node" semanticCandidatesExpression="aql:self.pins->intersection(diagram.nodes.semanticElements->select(e|e.oclIsKindOf(concise::Net))->first().pins)" domainClass="concise::Pin">
             <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW" width="4" height="2" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='pin_color']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -76,7 +76,7 @@
         </edgeMappings>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.eclipse.epsilon.netlist.viewpoint.component.diagram" label="Component Diagram" domainClass="conciseNetlist::Component" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.eclipse.epsilon.netlist.viewpoint.component.diagram" label="Component Diagram" domainClass="concise::Component" enablePopupBars="true">
       <metamodel href="http://eclipse.org/epsilon/netlist/concise#/"/>
       <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.graphviz.neato" label="Graphviz Neato" description="Spring model layouts. Neato attempts to minimize a global energy function, which is equivalent to statistical multi-dimensional scaling. The solution is achieved using stress majorization, though the older Kamada-Kawai algorithm, using steepest descent, is also available.">
         <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.edgeRouting">
@@ -85,8 +85,8 @@
         </layoutOptions>
       </layout>
       <defaultLayer name="Default">
-        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.cmpdiagram.component" label="Component Node" semanticCandidatesExpression="var:self" domainClass="conciseNetlist::Component">
-          <borderedNodeMappings name="org.eclipse.epsilon.netlist.viewpoint.cmpdiagram.pin" label="Pin Border Node" semanticCandidatesExpression="feature:pins" domainClass="conciseNetlist::Pin">
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.cmpdiagram.component" label="Component Node" semanticCandidatesExpression="var:self" domainClass="concise::Component">
+          <borderedNodeMappings name="org.eclipse.epsilon.netlist.viewpoint.cmpdiagram.pin" label="Pin Border Node" semanticCandidatesExpression="feature:pins" domainClass="concise::Pin">
             <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW" width="4" height="2" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='pin_color']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -97,7 +97,7 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.netdiagram.net" label="Net Node" semanticCandidatesExpression="aql:self.pins.net" domainClass="conciseNetlist::Net">
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.netdiagram.net" label="Net Node" semanticCandidatesExpression="aql:self.pins.net" domainClass="concise::Net">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="-1" height="-1" color="//@userColorsPalettes[name='Element%20Palette']/@entries[name='net_color']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -113,20 +113,20 @@
         </edgeMappings>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_2:TreeDescription" name="org.eclipse.epsilon.netlist.viewpoint.tree.diagram" label="Tree Representation" domainClass="conciseNetlist::Netlist">
+    <ownedRepresentations xsi:type="description_2:TreeDescription" name="org.eclipse.epsilon.netlist.viewpoint.tree.diagram" label="Tree Representation" domainClass="concise::Netlist">
       <metamodel href="http://eclipse.org/epsilon/netlist/concise#/"/>
-      <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.namedNets" label="Named Nets Node" domainClass="conciseNetlist::Netlist" semanticCandidatesExpression="var:self">
+      <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.namedNets" label="Named Nets Node" domainClass="concise::Netlist" semanticCandidatesExpression="var:self">
         <defaultStyle labelSize="12" labelExpression="aql:'Named Nets'">
           <labelFormat>bold</labelFormat>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
         </defaultStyle>
-        <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.namedNet" label="Named Net Node" domainClass="conciseNetlist::Net" semanticCandidatesExpression="aql:self.nets->select(n | not n.name.startsWith('UNNAMED_'))">
+        <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.namedNet" label="Named Net Node" domainClass="concise::Net" semanticCandidatesExpression="aql:self.nets->select(n | not n.name.startsWith('UNNAMED_'))">
           <defaultStyle labelSize="12" labelExpression="aql:'Net ' + self.name">
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </defaultStyle>
-          <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.namedNetPin" label="Named Net Pin Node" domainClass="conciseNetlist::Pin" semanticCandidatesExpression="aql:self.pins->sortedBy(p | p.name)">
+          <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.namedNetPin" label="Named Net Pin Node" domainClass="concise::Pin" semanticCandidatesExpression="aql:self.pins->sortedBy(p | p.name)">
             <defaultStyle labelSize="12" labelExpression="aql:'Net Pin ' + self.name + ' from ' + self.component.name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -134,18 +134,18 @@
           </subItemMappings>
         </subItemMappings>
       </subItemMappings>
-      <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.unnamedNets" label="Unnamed Nets Node" domainClass="conciseNetlist::Netlist" semanticCandidatesExpression="var:self">
+      <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.unnamedNets" label="Unnamed Nets Node" domainClass="concise::Netlist" semanticCandidatesExpression="var:self">
         <defaultStyle labelSize="12" labelExpression="aql:'Unnamed Nets'">
           <labelFormat>bold</labelFormat>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
         </defaultStyle>
-        <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.unnamedNet" label="Unnamed Net Node" domainClass="conciseNetlist::Net" semanticCandidatesExpression="aql:self.nets->select(n | n.name.startsWith('UNNAMED_'))">
+        <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.unnamedNet" label="Unnamed Net Node" domainClass="concise::Net" semanticCandidatesExpression="aql:self.nets->select(n | n.name.startsWith('UNNAMED_'))">
           <defaultStyle labelSize="12" labelExpression="aql:'Net ' + self.name">
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </defaultStyle>
-          <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.unnamedNetPin" label="Unnamed Net Pin Node" domainClass="conciseNetlist::Pin" semanticCandidatesExpression="aql:self.pins->sortedBy(p | p.name)">
+          <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.unnamedNetPin" label="Unnamed Net Pin Node" domainClass="concise::Pin" semanticCandidatesExpression="aql:self.pins->sortedBy(p | p.name)">
             <defaultStyle labelSize="12" labelExpression="aql:'Net Pin ' + self.name + ' from ' + self.component.name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -153,23 +153,23 @@
           </subItemMappings>
         </subItemMappings>
       </subItemMappings>
-      <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.components" label="Components Node" domainClass="conciseNetlist::Netlist" semanticCandidatesExpression="var:self">
+      <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.components" label="Components Node" domainClass="concise::Netlist" semanticCandidatesExpression="var:self">
         <defaultStyle labelSize="12" labelExpression="aql:'Components'">
           <labelFormat>bold</labelFormat>
           <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
         </defaultStyle>
-        <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.components" label="Component Node" domainClass="conciseNetlist::Component" semanticCandidatesExpression="feature:components">
+        <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.components" label="Component Node" domainClass="concise::Component" semanticCandidatesExpression="feature:components">
           <defaultStyle labelSize="12" labelExpression="aql:'Component ' + self.name + ' (' + self.features->sep(', ') + ')'">
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </defaultStyle>
-          <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.componentPin" label="Component Pin Node" domainClass="conciseNetlist::Pin" semanticCandidatesExpression="aql:self.pins->sortedBy(p | p.name)">
+          <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.componentPin" label="Component Pin Node" domainClass="concise::Pin" semanticCandidatesExpression="aql:self.pins->sortedBy(p | p.name)">
             <defaultStyle labelSize="12" labelExpression="aql:'Component Pin ' + self.name + ' to ' + self.net.name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </defaultStyle>
-            <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.sameNetPin" label="Same Net Pin Node" domainClass="conciseNetlist::Pin" semanticCandidatesExpression="aql:self.net.pins->excluding(self)">
+            <subItemMappings name="org.eclipse.epsilon.netlist.viewpoint.tree.sameNetPin" label="Same Net Pin Node" domainClass="concise::Pin" semanticCandidatesExpression="aql:self.net.pins->excluding(self)">
               <defaultStyle labelSize="12" labelExpression="aql:'Same Net: Pin ' + self.name + ' from ' + self.component.name">
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>

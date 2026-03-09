@@ -46,3 +46,6 @@ org.eclipse.m2e.core.prefs
 /features/.project
 /releng/.project
 /tests/.project
+
+# Eclipse binary folders
+bin/

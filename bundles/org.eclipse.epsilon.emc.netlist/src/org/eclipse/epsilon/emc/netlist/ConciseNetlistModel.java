@@ -18,8 +18,8 @@ import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
 import org.eclipse.epsilon.eol.exceptions.models.EolNotInstantiableModelElementTypeException;
 import org.eclipse.epsilon.eol.models.IRelativePathResolver;
 import org.eclipse.epsilon.eol.models.Model;
-import org.eclipse.epsilon.netlist.model.conciseNetlist.ConciseNetlistPackage;
-import org.eclipse.epsilon.netlist.model.conciseNetlist.resource.ConciseNetlistResourceFactory;
+import org.eclipse.epsilon.netlist.model.concise.ConcisePackage;
+import org.eclipse.epsilon.netlist.model.concise.resource.ConciseNetlistResourceFactory;
 
 public class ConciseNetlistModel extends Model {
 
@@ -41,7 +41,7 @@ public class ConciseNetlistModel extends Model {
 		extMap.put("dat", new ConciseNetlistResourceFactory());
 
 		Registry registry = rs.getPackageRegistry();
-		registry.put(ConciseNetlistPackage.eNS_URI, ConciseNetlistPackage.eINSTANCE);
+		registry.put(ConcisePackage.eNS_URI, ConcisePackage.eINSTANCE);
 		
 		Resource r = rs.getResource(modelFileUri, true);
 		model = new InMemoryEmfModel(r);

@@ -6,8 +6,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.epsilon.emc.emf.EmfModel;
 import org.eclipse.epsilon.eol.EolModule;
-import org.eclipse.epsilon.netlist.model.conciseNetlist.ConciseNetlistPackage;
-import org.eclipse.epsilon.netlist.model.conciseNetlist.resource.ConciseNetlistResourceFactory;
+import org.eclipse.epsilon.netlist.model.concise.ConcisePackage;
+import org.eclipse.epsilon.netlist.model.concise.resource.ConciseNetlistResourceFactory;
 
 public class EolEmfModelExample {
 
@@ -16,12 +16,12 @@ public class EolEmfModelExample {
 		Resource.Factory.Registry.INSTANCE
 			.getExtensionToFactoryMap().put("dat", new ConciseNetlistResourceFactory());
 		EPackage.Registry.INSTANCE
-			.put(ConciseNetlistPackage.eNS_URI, ConciseNetlistPackage.eINSTANCE);
+			.put(ConcisePackage.eNS_URI, ConcisePackage.eINSTANCE);
 
 		try (var model = new EmfModel()) {
 			model.setModelFile("../org.eclipse.epsilon.examples.netlist.model/dialcnet.dat");
 			model.setName("Model");
-			model.setMetamodelUri(ConciseNetlistPackage.eNS_URI);
+			model.setMetamodelUri(ConcisePackage.eNS_URI);
 			model.load();
 
 			EolModule module = new EolModule();

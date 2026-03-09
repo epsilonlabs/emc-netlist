@@ -1,0 +1,29 @@
+@namespace(uri="http://eclipse.org/epsilon/netlist/concise")
+package concise;
+
+class Netlist {
+	val Net[*] nets;
+	val Component[*] components;
+}
+
+abstract class NamedElement {
+	attr String name;
+}
+
+class Net extends NamedElement {
+	ref Pin[*]#net pins;
+}
+
+class Component extends NamedElement  {
+	val Pin[*]#component pins;
+	attr String[*] features;
+
+    // Note: would it make more sense to have something that computes
+    // the shortest path from the component to the net, if it exists?
+	op boolean isConnectedTo(Net net);
+}
+
+class Pin extends NamedElement  {
+	ref Component#pins component;
+	ref Net#pins net;
+}

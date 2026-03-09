@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.epsilon.netlist.model.concise;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Automatic-Module-Name: org.eclipse.epsilon.netlist.concise.model
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: org.eclipse.epsilon.netlist.model.concise,
+ org.eclipse.epsilon.netlist.model.concise.impl,
+ org.eclipse.epsilon.netlist.model.concise.resource,
+ org.eclipse.epsilon.netlist.model.concise.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy
