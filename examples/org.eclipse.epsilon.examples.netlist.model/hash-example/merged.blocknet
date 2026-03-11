@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<BlockNetlist xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://eclipse.org/epsilon/netlist/blocknet">
+  <nets name="NC" pins="//@circuitBlocks.0/@instances.0/@components.0/@pins.0 //@circuitBlocks.0/@instances.0/@components.1/@pins.0"/>
+  <nets name="UNNAMED_1_0805NPO_I1_A" pins="//@circuitBlocks.0/@instances.0/@components.0/@pins.1 //@circuitBlocks.0/@instances.0/@components.1/@pins.1 //@circuitBlocks.0/@instances.0/@components.2/@pins.0"/>
+  <nets name="UNNAMED_1_86605402_I3_A" pins="//@circuitBlocks.0/@instances.0/@components.1/@pins.2 //@circuitBlocks.0/@instances.0/@components.2/@pins.1"/>
+  <componentTypes name="CAP" instances="//@circuitBlocks.0/@instances.0/@components.0"/>
+  <componentTypes name="CON" instances="//@circuitBlocks.0/@instances.0/@components.1"/>
+  <componentTypes name="RES" instances="//@circuitBlocks.0/@instances.0/@components.2"/>
+  <circuitBlocks name="?">
+    <instances name="?">
+      <components circuitName="C1" blockName="C1" partNumber="SC0266-102G" type="//@componentTypes.0">
+        <features>0805_NPO-SC0266-102G</features>
+        <features>0805_NPO</features>
+        <features>A</features>
+        <pins name="2" net="//@nets.0"/>
+        <pins name="1" net="//@nets.1"/>
+      </components>
+      <components circuitName="CN1" blockName="CN1" partNumber="86605402" type="//@componentTypes.1">
+        <features>86605402-86605402</features>
+        <features>1E-A</features>
+        <pins name="2" net="//@nets.0"/>
+        <pins name="3" net="//@nets.1"/>
+        <pins name="1" net="//@nets.2"/>
+      </components>
+      <components circuitName="R1" blockName="R1" partNumber="SR0009-103B" type="//@componentTypes.2">
+        <features>RC3715E-SR0009-103B</features>
+        <features>RC3715E</features>
+        <features>10A</features>
+        <pins name="2" net="//@nets.1"/>
+        <pins name="1" net="//@nets.2"/>
+      </components>
+    </instances>
+  </circuitBlocks>
+</BlockNetlist>

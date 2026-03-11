@@ -12,18 +12,19 @@ This also makes it possible to take a concise netlist like the [example one](./e
 
 ## Repository structure
 
-* `bundles`: Eclipse plugins implementing the EMF resource factory, EMC driver, and tooling.
-  * `o.e.e.netlist.model`: metamodel and EMF resource factory for concise netlists.
+* `bundles`: Eclipse plugins implementing the EMF resource factories, EMC driver, and tooling.
+  * `o.e.e.netlist.model.concise`: metamodel and EMF resource factory for concise netlists.
+  * `o.e.e.netlist.model.hash`: metamodel and EMF resource factory for hash files (used to associate components to circuit blocks).
   * `o.e.e.emc.netlist`: EMC driver for concise netlists, based on the EMF EMC driver.
   * `o.e.e.emc.netlist.dt`: developer tooling for the EMC driver from within the Eclipse IDE.
   * `o.e.e.netlist.viewpoint`: Eclipse Sirius-based viewpoint over concise netlist models.
 * `examples`:
-  * `o.e.e.examples.netlist.model`: minimal example model shown above, with Sirius representations.
+  * `o.e.e.examples.netlist.model`: example models, including the minimal example model shown above, with Sirius representations.
   * `o.e.e.examples.netlist.queries`: example EOL program querying concise netlists, together with sample Java code to execute it (using the generic EMF EMC driver, and using the netlist-specific variant).
 
-## Metamodel
+## Metamodel (concise netlists)
 
-The metamodel implemented by this EMC driver is as follows:
+The concise netlist metamodel implemented by this EMC driver is as follows:
 
 ```mermaid
 ---
@@ -66,7 +67,7 @@ From an Eclipse IDE with Epsilon and Sirius installed:
 * Import the plugins in the `bundles` folder.
 * Right-click on any of the plugins and select "Run As - Eclipse Application".
 * In the nested Eclipse instance, import the projects in the `examples` folder:
-  * Try browsing the `.dat` model through the reflective EMF editor, and compare with the representations in the `.aird` file.
+  * Try browsing the `.dat` and `.hash` models through the reflective EMF editor, and compare with the representations in the `.aird` file.
   * Run the example programs to see how to query these netlists through plain Java and through Epsilon programs.
 
 ## License
