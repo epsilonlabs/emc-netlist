@@ -1,0 +1,31 @@
+@namespace(uri="http://eclipse.org/epsilon/netlist/hash")
+package hash;
+
+class HashModel {
+	val ComponentType[*] componentTypes;
+	val CircuitBlock[*] circuitBlocks;
+}
+
+class ComponentType {
+	attr String name;
+	ref Component[*]#type instances;
+}
+
+class CircuitBlock {
+	// Name in the file, or "?" for the catch-all block
+	attr String name;
+	val CircuitBlockInstance[*] instances;
+}
+
+class CircuitBlockInstance {
+	// Name in the file, or "?" for the catch-all instance
+	attr String name;
+	val Component[*] components;
+}
+
+class Component {
+	attr String circuitName;
+	attr String blockName;
+	attr String partNumber;
+	ref ComponentType#instances type;
+}
