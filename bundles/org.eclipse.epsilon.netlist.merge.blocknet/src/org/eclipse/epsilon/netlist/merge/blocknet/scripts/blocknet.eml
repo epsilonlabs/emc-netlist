@@ -1,0 +1,122 @@
+pre {
+  var rootBlocknet;
+}
+
+rule MergeRoots
+  merge nl : Concise!Netlist
+  with hm : Hash!HashModel
+  into bn : Blocknet!BlockNetlist
+{
+  rootBlocknet = bn;
+
+  bn.nets ::= nl.nets;
+  bn.componentTypes ::= hm.componentTypes;
+  bn.circuitBlocks ::= hm.circuitBlocks;
+}
+
+rule TransformNets
+  transform s : Concise!Net
+  to t : Blocknet!Net
+{
+  t.pins ::= s.pins;
+}
+
+rule MergeComponents
+  merge cc : Concise!Component
+  with hc : Hash!Component
+  into bnc : Blocknet!Component
+{
+  bnc.circuitName = hc.circuitName;
+  bnc.blockName = hc.blockName;
+  bnc.partNumber = hc.partNumber;
+  bnc.type ::= hc.type;
+  bnc.features = cc.features.excluding(hc.partNumber);
+  bnc.pins ::= cc.pins;
+}
+
+rule TransformConciseOnlyComponents
+  transform s : Concise!Component
+  to t : Blocknet!Component
+{
+  // These won't belong to any circuit blocks:
+  // add them to the 'concise-only' instance of
+  // the ? circuit block
+  t.circuitName = s.name;
+  t.blockName = s.name;
+  if (not s.features.isEmpty()) {
+    t.partNumber = s.features.first;
+    if (s.features.size() > 1) {
+      t.features.addAll(s.features.subList(2, s.features.size()));
+    }
+  }
+  t.pins ::= s.pins;
+
+  var unknownInstance = rootBlocknet.getUnknownBlockInstance();
+  unknownInstance.components.add(t);
+}
+
+rule TransformOnlyHashComponents
+  transform s : Hash!Component
+  to t : Blocknet!Component
+{
+  t.circuitName = s.circuitName;
+  t.blockName = s.blockName;
+  t.partNumber = s.partNumber.
+  t.type ::= s.type;
+
+  var unknownInstance = rootBlocknet.getUnknownBlockInstance();
+  unknownInstance.components.add(t);
+}
+
+rule TransformPins
+  transform s : Concise!Pin
+  to t : Blocknet!Pin {
+
+  // references are set via eOpposites - nothing to do here
+
+}
+
+rule TransformComponentTypes
+  transform s : Hash!ComponentType
+  to t : Blocknet!ComponentType
+{
+  t.name = s.name;
+  // instances set via eOpposites - nothing to do
+}
+
+rule TransformCircuitBlocks
+  transform s : Hash!CircuitBlock
+  to t : Blocknet!CircuitBlock
+{
+  t.name = s.name;
+  t.instances ::= s.instances;
+}
+
+rule TransformCircuitBlockInstances
+  transform s : Hash!CircuitBlockInstance
+  to t : Blocknet!CircuitBlockInstance
+{
+  t.name = s.name;
+  t.components ::= s.components;
+}
+
+@cached
+operation Blocknet!BlockNetlist getUnknownBlockInstance() {
+  var unknownCCB = rootBlocknet.circuitBlocks.selectOne(cb|cb.name='?');
+  if (unknownCCB.isUndefined()) {
+    unknownCCB = new Blocknet!CircuitBlock;
+    unknownCCB.name = '?';
+    rootBlocknet.circuitBlocks.add(unknownCCB);
+  }
+
+  var unknownInstance : Blocknet!CircuitBlockInstance;
+  if (not unknownCCB.instances.isEmpty()) {
+    unknownInstance = unknownCCB.instances.first;
+  } else {
+    unknownInstance = new Blocknet!CircuitBlockInstance;
+    unknownInstance.name = '?';
+    unknownCCB.instances.add(unknownInstance);
+  }
+
+  return unknownInstance;
+}
