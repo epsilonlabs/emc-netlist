@@ -18,6 +18,7 @@ rule TransformNets
   transform s : Concise!Net
   to t : Blocknet!Net
 {
+  t.name = s.name;
   t.pins ::= s.pins;
 }
 
@@ -70,10 +71,10 @@ rule TransformOnlyHashComponents
 
 rule TransformPins
   transform s : Concise!Pin
-  to t : Blocknet!Pin {
-
+  to t : Blocknet!Pin
+{
+  t.name = s.name;
   // references are set via eOpposites - nothing to do here
-
 }
 
 rule TransformComponentTypes
