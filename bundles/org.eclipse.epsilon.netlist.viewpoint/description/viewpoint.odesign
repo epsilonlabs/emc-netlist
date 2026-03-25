@@ -179,6 +179,41 @@
         </subItemMappings>
       </subItemMappings>
     </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="org.eclipse.epsilon.netlist.viewpoint.block.diagram" label="Circuit Block Instance Diagram" domainClass="blocknet::CircuitBlockInstance" enablePopupBars="true">
+      <metamodel href="http://eclipse.org/epsilon/netlist/blocknet#/"/>
+      <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.graphviz.fdp" label="Graphviz FDP" description="Spring model layouts similar to those of Neato, but does this by reducing forces rather than working with energy. Fdp implements the Fruchterman-Reingold heuristic including a multigrid solver that handles larger graphs and clustered undirected graphs."/>
+      <defaultLayer name="Default">
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.block.diagram.component" label="Circuit Block Component" semanticCandidatesExpression="feature:components" domainClass="blocknet::Component">
+          <borderedNodeMappings name="org.eclipse.epsilon.netlist.viewpoint.block.diagram.component.pin" label="Block Component Pin" semanticCandidatesExpression="feature:pins" domainClass="blocknet::Pin">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="feature:circuitName" sizeComputationExpression="aql:self.pins->size()" labelPosition="node" resizeKind="NSEW" width="-1" height="-1">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.block.diagram.net" label="Net Node" semanticCandidatesExpression="aql:self.components.pins.net" domainClass="blocknet::Net">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:if self.name.startsWith('UNNAMED_') then '' else self.name endif" sizeComputationExpression="1" labelPosition="node" resizeKind="NSEW" width="-1" height="-1">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="org.eclipse.epsilon.netlist.viewpoint.block.diagram.pin2net" label="Component Pin to Net Edge" sourceMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram.component.pin']" targetMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram.net']" targetFinderExpression="feature:net">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.eclipse.epsilon.netlist.viewpoint.Services"/>
   </ownedViewpoints>
   <userColorsPalettes name="Element Palette">
