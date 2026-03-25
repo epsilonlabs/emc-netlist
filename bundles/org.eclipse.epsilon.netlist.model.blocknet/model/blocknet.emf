@@ -1,0 +1,45 @@
+@namespace(uri="http://eclipse.org/epsilon/netlist/blocknet")
+package blocknet;
+
+class BlockNetlist {
+	val Net[*] nets;
+	val ComponentType[*] componentTypes;
+	val CircuitBlock[*] circuitBlocks;
+}
+
+abstract class NamedElement {
+    // Name if it has one, "?" for some elements
+    // without proper names (e.g. circuit blocks
+    // and instances marked as "?" in the hash file)
+	attr String name;
+}
+
+class CircuitBlock extends NamedElement {
+	val CircuitBlockInstance[*] instances;
+}
+
+class ComponentType extends NamedElement {
+	ref Component[*]#type instances;
+}
+
+class CircuitBlockInstance extends NamedElement {
+	val Component[*] components;
+}
+
+class Net extends NamedElement {
+	ref Pin[*]#net pins;
+}
+
+class Pin extends NamedElement  {
+	ref Component#pins component;
+	ref Net#pins net;
+}
+
+class Component {
+	attr String circuitName;
+	attr String blockName;
+	attr String partNumber;
+	ref ComponentType#instances type;
+	attr String[*] features;
+	val Pin[*]#component pins;
+}

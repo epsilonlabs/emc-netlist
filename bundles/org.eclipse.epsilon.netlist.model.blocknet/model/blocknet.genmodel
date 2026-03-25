@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.epsilon.netlist.model.blocknet/src"
+    modelPluginID="org.eclipse.epsilon.netlist.model.blocknet" modelName="Blocknet"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="21.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>blocknet.ecore</foreignModel>
+  <genPackages prefix="Blocknet" basePackage="org.eclipse.epsilon.netlist.model" disposableProviderFactory="true"
+      ecorePackage="blocknet.ecore#/">
+    <genClasses ecoreClass="blocknet.ecore#//BlockNetlist">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blocknet.ecore#//BlockNetlist/nets"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blocknet.ecore#//BlockNetlist/componentTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blocknet.ecore#//BlockNetlist/circuitBlocks"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="blocknet.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute blocknet.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="blocknet.ecore#//CircuitBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blocknet.ecore#//CircuitBlock/instances"/>
+    </genClasses>
+    <genClasses ecoreClass="blocknet.ecore#//ComponentType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference blocknet.ecore#//ComponentType/instances"/>
+    </genClasses>
+    <genClasses ecoreClass="blocknet.ecore#//CircuitBlockInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blocknet.ecore#//CircuitBlockInstance/components"/>
+    </genClasses>
+    <genClasses ecoreClass="blocknet.ecore#//Net">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference blocknet.ecore#//Net/pins"/>
+    </genClasses>
+    <genClasses ecoreClass="blocknet.ecore#//Pin">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference blocknet.ecore#//Pin/component"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference blocknet.ecore#//Pin/net"/>
+    </genClasses>
+    <genClasses ecoreClass="blocknet.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute blocknet.ecore#//Component/circuitName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute blocknet.ecore#//Component/blockName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute blocknet.ecore#//Component/partNumber"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference blocknet.ecore#//Component/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute blocknet.ecore#//Component/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference blocknet.ecore#//Component/pins"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
