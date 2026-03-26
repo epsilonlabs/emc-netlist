@@ -197,15 +197,22 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.block.diagram.net" label="Net Node" semanticCandidatesExpression="aql:self.components.pins.net" domainClass="blocknet::Net">
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.block.diagram.namedNet" label="Named Net Node" semanticCandidatesExpression="aql:self.components.pins.net->select(n | not n.name.startsWith('UNNAMED_'))" domainClass="blocknet::Net">
           <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:if self.name.startsWith('UNNAMED_') then '' else self.name endif" sizeComputationExpression="1" labelPosition="node" resizeKind="NSEW" width="-1" height="-1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="org.eclipse.epsilon.netlist.viewpoint.block.diagram.pin2net" label="Component Pin to Net Edge" sourceMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram.component.pin']" targetMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram.net']" targetFinderExpression="feature:net">
-          <style targetArrow="NoDecoration" sizeComputationExpression="2">
+        <nodeMappings name="org.eclipse.epsilon.netlist.viewpoint.block.diagram.unnamedNet" label="Unnamed Net Node" semanticCandidatesExpression="aql:self.components.pins.net->select(n | n.name.startsWith('UNNAMED_'))" domainClass="blocknet::Net">
+          <style xsi:type="style:DotDescription" labelSize="12" showIcon="false" labelExpression="aql:''" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="org.eclipse.epsilon.netlist.viewpoint.block.diagram.pin2net" label="Component Pin to Net Edge" sourceMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram.component']/@borderedNodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram.component.pin']" targetMapping="//@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram.namedNet'] //@ownedViewpoints[name='org.eclipse.epsilon.netlist.viewpoint']/@ownedRepresentations[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram']/@defaultLayer/@nodeMappings[name='org.eclipse.epsilon.netlist.viewpoint.block.diagram.unnamedNet']" targetFinderExpression="feature:net">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="manhattan" foldingStyle="TARGET">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
