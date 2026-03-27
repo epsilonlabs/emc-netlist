@@ -30,6 +30,7 @@ public class NetlistMerge implements AutoCloseable {
 			netlistModel.setModelFileUri(modelFileUri);
 			netlistModel.setReadOnLoad(true);
 			netlistModel.setStoredOnDisposal(false);
+			netlistModel.setCachingEnabled(true);
 			netlistModel.load();
 			return this;
 		}
@@ -46,6 +47,7 @@ public class NetlistMerge implements AutoCloseable {
 			hashModel.setModelFileUri(modelFileUri);
 			hashModel.setReadOnLoad(true);
 			hashModel.setStoredOnDisposal(false);
+			hashModel.setCachingEnabled(true);
 			hashModel.load();
 			return this;
 		}
@@ -62,9 +64,9 @@ public class NetlistMerge implements AutoCloseable {
 			targetModel.setModelFileUri(modelFileUri);
 			targetModel.setReadOnLoad(false);
 			targetModel.setStoredOnDisposal(true);
+			targetModel.setCachingEnabled(true);
 			targetModel.load();
 			return this;
-			
 		}
 
 		public NetlistMerge build() {
@@ -97,7 +99,7 @@ public class NetlistMerge implements AutoCloseable {
 
 		this.emlModule = new EmlModule();
 		emlModule.getContext().getModelRepository().addModels(netlistModel, hashModel, targetModel);
-		emlModule.getContext().setMatchTrace(eclModule.getContext().getMatchTrace());
+		emlModule.getContext().setMatchTrace(eclModule.getContext().getMatchTrace().getReduced());
 		emlModule.parse(getClass().getResource("scripts/blocknet.eml"));
 		emlModule.execute();
 	}
