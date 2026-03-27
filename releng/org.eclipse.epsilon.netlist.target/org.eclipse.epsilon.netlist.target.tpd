@@ -1,0 +1,58 @@
+target "Epsilon Target Platform" environment JavaSE-17 with configurePhase requirements source
+
+location "https://download.eclipse.org/cbi/updates/license" {
+	org.eclipse.license.feature.group lazy
+}
+
+location "https://download.eclipse.org/releases/2026-03" {
+	org.eclipse.e4.core.tools.feature.feature.group lazy
+	org.eclipse.emf.sdk.feature.group lazy
+	org.eclipse.emf.validation.sdk.feature.group lazy
+	org.eclipse.equinox.sdk.feature.group lazy
+	org.eclipse.jdt.feature.group lazy
+	org.eclipse.pde.feature.group lazy
+	org.eclipse.platform.feature.group lazy
+	org.eclipse.sdk lazy
+	org.eclipse.rcp.feature.group lazy
+	org.eclipse.sdk.ide lazy
+	org.eclipse.egit.feature.group lazy
+	org.eclipse.ocl.all.sdk.feature.group lazy
+	org.eclipse.eef.sdk.feature.feature.group lazy
+	org.eclipse.xsd.sdk.feature.group lazy
+	org.eclipse.m2m.qvt.oml.sdk.feature.group lazy
+}
+
+location "https://download.eclipse.org/sirius/updates/releases/7.5.0/2025-09/" {
+	org.eclipse.sirius.specifier.feature.group lazy
+	org.eclipse.sirius.specifier.properties.feature.feature.group lazy
+	org.eclipse.sirius.runtime.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.feature.group lazy
+	org.eclipse.sirius.properties.feature.feature.group lazy
+	org.eclipse.sirius.diagram.elk.feature.feature.group lazy
+}
+
+location "https://download.eclipse.org/emfatic/update" {
+	org.eclipse.emf.emfatic.feature.group lazy
+}
+
+location "http://download.eclipse.org/epsilon/interim/" {
+	org.eclipse.epsilon.eml.engine lazy
+	org.eclipse.epsilon.eml.dt lazy
+	org.eclipse.epsilon.ecl.engine lazy
+	org.eclipse.epsilon.ecl.dt lazy
+	org.eclipse.epsilon.evl.engine lazy
+	org.eclipse.epsilon.evl.dt lazy
+	org.eclipse.epsilon.emc.emf lazy
+}
+
+location "https://download.eclipse.org/releases/2025-03/202503121000/" {
+	org.apache.commons.logging [1.2.0,1.2.1)
+}
+
+maven MavenDependencies scope=compile dependencyDepth=infinite missingManifest=generate includeSources {
+	dependency {
+		groupId="info.picocli"
+		artifactId="picocli"
+		version="4.7.7"
+	}
+}

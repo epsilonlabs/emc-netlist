@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Epsilon Netlists Target Platform
+Bundle-SymbolicName: org.eclipse.epsilon.netlist.target
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: University of York
+Automatic-Module-Name: org.eclipse.epsilon.netlist.target
+Bundle-RequiredExecutionEnvironment: JavaSE-17
