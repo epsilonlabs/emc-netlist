@@ -43,6 +43,7 @@ location "http://download.eclipse.org/epsilon/interim/" {
 	org.eclipse.epsilon.evl.engine lazy
 	org.eclipse.epsilon.evl.dt lazy
 	org.eclipse.epsilon.emc.emf lazy
+	org.eclipse.epsilon.emc.emf.dt lazy
 }
 
 location "https://download.eclipse.org/releases/2025-03/202503121000/" {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Epsilon Target Platform" sequenceNumber="1774621666">
+<target name="Epsilon Target Platform" sequenceNumber="1777020453">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="true" type="InstallableUnit">
       <unit id="org.eclipse.license.feature.group" version="0.0.0"/>
@@ -46,6 +46,7 @@
       <unit id="org.eclipse.epsilon.evl.engine" version="0.0.0"/>
       <unit id="org.eclipse.epsilon.evl.dt" version="0.0.0"/>
       <unit id="org.eclipse.epsilon.emc.emf" version="0.0.0"/>
+      <unit id="org.eclipse.epsilon.emc.emf.dt" version="0.0.0"/>
       <repository location="http://download.eclipse.org/epsilon/interim/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="true" type="InstallableUnit">
