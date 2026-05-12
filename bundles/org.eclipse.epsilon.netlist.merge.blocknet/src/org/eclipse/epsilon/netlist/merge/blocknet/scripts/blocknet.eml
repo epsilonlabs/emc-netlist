@@ -64,9 +64,6 @@ rule TransformOnlyHashComponents
   t.blockName = s.blockName;
   t.partNumber = s.partNumber.
   t.type ::= s.type;
-
-  var unknownInstance = rootBlocknet.getUnknownBlockInstance();
-  unknownInstance.components.add(t);
 }
 
 rule TransformPins
